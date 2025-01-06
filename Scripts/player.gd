@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		print(velocity)
 	'''
 	
-	move_and_slide()
+	#move_and_slide()
+	move_and_collide(velocity * delta)
 	
 	
