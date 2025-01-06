@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=3 format=3 uid="uid://dov7ysq5n1piu"]
 
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="1_sq167"]
+[ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="2_rme3n"]
 
 [node name="Main2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_sq167")]
-position = Vector2(259, 124)
+position = Vector2(259, 234)
+
+[node name="StaticBorder2D" parent="." instance=ExtResource("2_rme3n")]
+
+[node name="StaticBorder2D2" parent="." instance=ExtResource("2_rme3n")]
+position = Vector2(0, 625)
+
+[node name="StaticBorder2D3" parent="." instance=ExtResource("2_rme3n")]
+position = Vector2(21, -38)
+rotation = 1.5708
+scale = Vector2(0.64, 1.067)
+
+[node name="StaticBorder2D4" parent="." instance=ExtResource("2_rme3n")]
+position = Vector2(1160, -45)
+rotation = 1.5708
+scale = Vector2(0.640001, 1)

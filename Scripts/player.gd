@@ -12,9 +12,11 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y = direction * speed
 	
+	'''
 	if direction != 0:
 		print(direction)
 		print(velocity)
+	'''
 	
 	move_and_slide()
 	
