@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [input]
 
 move_up={
@@ -30,7 +35,10 @@ move_down={
 
 [layer_names]
 
-2d_physics/layer_2="block_layer"
+2d_physics/layer_1="PlayerEnemy"
+2d_physics/layer_2="Blocks"
+2d_physics/layer_3="Walls"
+2d_physics/layer_4="Ball"
 
 [rendering]
 

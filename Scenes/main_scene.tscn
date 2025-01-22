@@ -1,32 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=11 format=3 uid="uid://dov7ysq5n1piu"]
 
+[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_6w28x"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="1_as5qm"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_dc0ml"]
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="1_sq167"]
+[ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="2_kuwch"]
 [ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="2_rme3n"]
-[ext_resource type="PackedScene" uid="uid://bxf3ckdox1opi" path="res://Scenes/ball.tscn" id="3_21n5t"]
+[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="7_kxgy1"]
+[ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="8_7e3hk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
+size = Vector2(39, 660)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0j6qy"]
+font_size = 30
 
 [node name="Main2D" type="Node2D"]
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_dc0ml")
+
+[node name="BallSpawner" parent="." instance=ExtResource("2_kuwch")]
+position = Vector2(549, 340)
+
+[node name="BallDeleter" type="Area2D" parent="."]
+position = Vector2(0, 343)
+collision_mask = 8
+script = ExtResource("7_kxgy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallDeleter"]
+position = Vector2(1.5, 16)
+shape = SubResource("RectangleShape2D_xuxqu")
+
 [node name="Player" parent="." instance=ExtResource("1_sq167")]
 position = Vector2(146, 352)
-
-[node name="StaticBorder2D" parent="." instance=ExtResource("2_rme3n")]
-
-[node name="StaticBorder2D2" parent="." instance=ExtResource("2_rme3n")]
-position = Vector2(0, 625)
-
-[node name="StaticBorder2D3" parent="." instance=ExtResource("2_rme3n")]
-position = Vector2(21, -38)
-rotation = 1.5708
-scale = Vector2(0.64, 1.067)
-
-[node name="StaticBorder2D4" parent="." instance=ExtResource("2_rme3n")]
-position = Vector2(1160, -45)
-rotation = 1.5708
-scale = Vector2(0.640001, 1)
-
-[node name="Ball" parent="." instance=ExtResource("3_21n5t")]
-position = Vector2(506, 321)
+collision_mask = 5
 
 [node name="AllBlocks" type="Node2D" parent="."]
 position = Vector2(856, 335)
@@ -36,102 +44,132 @@ position = Vector2(-49, -4)
 
 [node name="Block" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
 position = Vector2(0, -267)
-block_strength = 4
 
 [node name="Block2" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -186)
-block_strength = 3
+position = Vector2(0, -195)
 
 [node name="Block3" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -107)
-block_strength = 2
+position = Vector2(0, -121)
 
 [node name="Block4" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -34)
-block_strength = 1
+position = Vector2(0, -50)
 
 [node name="Block5" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 38)
-block_strength = 1
+position = Vector2(0, 22)
 
 [node name="Block6" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 110)
-block_strength = 2
-
-[node name="Block9" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 179)
-block_strength = 3
+position = Vector2(0, 93)
 
 [node name="Block8" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 247)
-block_strength = 4
+position = Vector2(0, 167)
+
+[node name="Block9" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 240)
+
+[node name="Block10" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 314)
 
 [node name="BlockRow2" type="Node2D" parent="AllBlocks"]
-position = Vector2(-5, -4)
+position = Vector2(-6, -4)
 
 [node name="Block" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
 position = Vector2(0, -267)
-block_strength = 4
 
 [node name="Block2" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -186)
-block_strength = 3
+position = Vector2(0, -195)
 
 [node name="Block3" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -107)
-block_strength = 2
+position = Vector2(0, -121)
 
 [node name="Block4" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -34)
-block_strength = 1
+position = Vector2(0, -50)
 
 [node name="Block5" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 38)
-block_strength = 1
+position = Vector2(0, 22)
 
 [node name="Block6" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 110)
-block_strength = 2
-
-[node name="Block9" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 179)
-block_strength = 3
+position = Vector2(0, 93)
 
 [node name="Block8" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 247)
-block_strength = 4
+position = Vector2(0, 167)
+
+[node name="Block9" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 240)
+
+[node name="Block10" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 314)
 
 [node name="BlockRow3" type="Node2D" parent="AllBlocks"]
-position = Vector2(41, -4)
+position = Vector2(37, -4)
 
 [node name="Block" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
 position = Vector2(0, -267)
-block_strength = 4
 
 [node name="Block2" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -186)
-block_strength = 3
+position = Vector2(0, -195)
 
 [node name="Block3" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -107)
-block_strength = 2
+position = Vector2(0, -121)
 
 [node name="Block4" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, -34)
-block_strength = 1
+position = Vector2(0, -50)
 
 [node name="Block5" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 38)
-block_strength = 1
+position = Vector2(0, 22)
 
 [node name="Block6" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 110)
-block_strength = 2
-
-[node name="Block9" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 179)
-block_strength = 3
+position = Vector2(0, 93)
 
 [node name="Block8" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
-position = Vector2(0, 247)
-block_strength = 4
+position = Vector2(0, 167)
+
+[node name="Block9" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 240)
+
+[node name="Block10" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+position = Vector2(0, 314)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBorder2D" parent="Borders" instance=ExtResource("2_rme3n")]
+
+[node name="StaticBorder2D2" parent="Borders" instance=ExtResource("2_rme3n")]
+position = Vector2(0, 692)
+
+[node name="StaticBorder2D4" parent="Borders" instance=ExtResource("2_rme3n")]
+position = Vector2(1284, -10)
+rotation = 1.5708
+scale = Vector2(0.640001, 1)
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_6w28x")
+
+[node name="LifeText" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 29.0
+offset_right = 126.0
+offset_bottom = 71.0
+text = "Lives:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="LifeNumber" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 29.0
+offset_right = 200.0
+offset_bottom = 71.0
+text = "0"
+label_settings = SubResource("LabelSettings_0j6qy")
+horizontal_alignment = 2
+
+[node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
+position = Vector2(1085, 357)
+
+[connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
+[connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
+[connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]

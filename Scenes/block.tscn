@@ -8,6 +8,7 @@ size = Vector2(40, 73)
 
 [node name="Block" type="StaticBody2D"]
 collision_layer = 2
+collision_mask = 8
 script = ExtResource("1_r7y81")
 
 [node name="ColorRectForSizing" type="ColorRect" parent="."]

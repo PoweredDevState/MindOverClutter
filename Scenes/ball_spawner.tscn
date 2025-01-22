@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg685sdnkomnv"]
+
+[ext_resource type="Script" path="res://Scripts/ball_spawner.gd" id="1_d7157"]
+[ext_resource type="PackedScene" uid="uid://bxf3ckdox1opi" path="res://Scenes/ball.tscn" id="2_nq1h8"]
+
+[node name="BallSpawner" type="Node2D"]
+script = ExtResource("1_d7157")
+ball_scene = ExtResource("2_nq1h8")
+
+[node name="BallSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="BallSpawnTimer" to="." method="_on_timer_timeout"]
