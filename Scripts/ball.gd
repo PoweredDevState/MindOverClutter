@@ -28,14 +28,25 @@ func _physics_process(delta: float) -> void:
 		#increase the speed with each collision
 		
 		#match statement method
+		#NOTE: the collision_layer value is based on what is said
+		#	   when you hover on the layer
+		#EX: Layer 5: Enemy | Bit 4 | Value 16
 		match collider.collision_layer:
-			1, 4:
+			#Player and Ball
+			1, 8:
 				speed += acceleration
 				#direction = new_direction(collider)
+
+			#Block
 			2:
 				speed += acceleration
 				collider.reduce_strength()
-				
+
+			#Enemy
+			16:
+				#print("Hit Enemy")
+				speed += acceleration
+				collider.reduce_health()
 				
 		'''
 		#if statement method

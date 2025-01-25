@@ -168,7 +168,7 @@ label_settings = SubResource("LabelSettings_0j6qy")
 horizontal_alignment = 2
 
 [node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
-position = Vector2(1085, 357)
+position = Vector2(1134, 340)
 
 [connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
 [connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]

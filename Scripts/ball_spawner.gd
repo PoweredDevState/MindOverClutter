@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(get_parent())
+	#print(get_parent())
 	spawn_ball()
 
 
@@ -23,11 +23,11 @@ func spawn_ball_from_block(block_position : Vector2):
 
 
 func _on_game_manager_zero_balls_on_screen() -> void:
-	print("Start Timer")
+	#print("Start Timer")
 	$BallSpawnTimer.start()
 
 
 func _on_timer_timeout() -> void:
-	print("Stop Timer")
+	#print("Stop Timer")
 	$BallSpawnTimer.stop()
 	spawn_ball()

@@ -8,7 +8,7 @@ radius = 18.0
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 15
+collision_mask = 31
 script = ExtResource("1_d5van")
 acceleration = 5.0
 
