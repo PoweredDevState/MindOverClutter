@@ -170,6 +170,12 @@ horizontal_alignment = 2
 [node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
 position = Vector2(1134, 340)
 
+[node name="StartAttackMark" type="Node2D" parent="."]
+position = Vector2(160, 43)
+
+[node name="EndAttackMark" type="Node2D" parent="."]
+position = Vector2(160, 650)
+
 [connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
 [connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
