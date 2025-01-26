@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c71me4vbd2lju"]
+[gd_scene load_steps=9 format=3 uid="uid://c71me4vbd2lju"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_le81n"]
 [ext_resource type="Texture2D" uid="uid://bbgqp05s0n22u" path="res://Assets/Dragon.png" id="1_v00c6"]
+[ext_resource type="PackedScene" uid="uid://d0aw8x4lic3yx" path="res://Scenes/attack_indicator.tscn" id="2_ae8q2"]
 [ext_resource type="Script" path="res://Scripts/enemy_ui.gd" id="3_5lt8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ecoh"]
@@ -21,6 +22,7 @@ disable_mode = 1
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_le81n")
+attackIndiactorScene = ExtResource("2_ae8q2")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_v00c6")
@@ -56,4 +58,15 @@ offset_bottom = 20.0
 text = "Health"
 label_settings = SubResource("LabelSettings_d1a1a")
 
+[node name="ChargeTimer" type="Timer" parent="."]
+
+[node name="IndicatorTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="RechargeTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="health_changed" from="." to="EnemyUI" method="_on_enemy_health_changed"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
+[connection signal="timeout" from="IndicatorTimer" to="." method="_on_indicator_timer_timeout"]
+[connection signal="timeout" from="RechargeTimer" to="." method="_on_recharge_timer_timeout"]

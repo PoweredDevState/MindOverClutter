@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0aw8x4lic3yx"]
+
+[ext_resource type="Texture2D" uid="uid://d1701jebxahc7" path="res://Assets/AttackIndicator.png" id="1_4j1q1"]
+
+[node name="AttackIndicator" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(5, 5)
+texture = ExtResource("1_4j1q1")
