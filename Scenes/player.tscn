@@ -22,3 +22,7 @@ texture = ExtResource("3_63wn7")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(4, -3)
 polygon = PackedVector2Array(28, 69, 22, 45, -30, 34, -29, -37, 22, -44, 25, -87, 72, -87, 72, 70)
+
+[node name="StunTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

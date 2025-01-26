@@ -40,6 +40,7 @@ move_down={
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="Ball"
 2d_physics/layer_5="Enemy"
+2d_physics/layer_6="Attack"
 
 [rendering]
 

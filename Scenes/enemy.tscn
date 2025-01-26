@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c71me4vbd2lju"]
+[gd_scene load_steps=10 format=3 uid="uid://c71me4vbd2lju"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_le81n"]
 [ext_resource type="Texture2D" uid="uid://bbgqp05s0n22u" path="res://Assets/Dragon.png" id="1_v00c6"]
 [ext_resource type="PackedScene" uid="uid://d0aw8x4lic3yx" path="res://Scenes/attack_indicator.tscn" id="2_ae8q2"]
 [ext_resource type="Script" path="res://Scripts/enemy_ui.gd" id="3_5lt8s"]
+[ext_resource type="PackedScene" uid="uid://sktcfc55oy1h" path="res://Scenes/enemy_attack.tscn" id="3_jhhrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ecoh"]
 size = Vector2(148, 131)
@@ -12,7 +13,7 @@ size = Vector2(148, 131)
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_noqev"]
-bg_color = Color(0.68, 0.0949733, 0.0748, 1)
+bg_color = Color(0.0935, 0.55, 0.1848, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d1a1a"]
 font_size = 15
@@ -23,6 +24,7 @@ collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_le81n")
 attackIndiactorScene = ExtResource("2_ae8q2")
+attackScene = ExtResource("3_jhhrq")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_v00c6")
@@ -52,6 +54,7 @@ value = 100.0
 show_percentage = false
 
 [node name="LifeText" type="Label" parent="EnemyUI"]
+layout_mode = 0
 offset_top = -2.0
 offset_right = 62.0
 offset_bottom = 20.0

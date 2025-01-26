@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=13 format=3 uid="uid://dov7ysq5n1piu"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_6w28x"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="1_as5qm"]
@@ -14,6 +14,12 @@ size = Vector2(39, 660)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0j6qy"]
 font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anbr5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxlm8"]
+bg_color = Color(0.68, 0.147333, 0.0408, 1)
 
 [node name="Main2D" type="Node2D"]
 
@@ -167,6 +173,31 @@ text = "0"
 label_settings = SubResource("LabelSettings_0j6qy")
 horizontal_alignment = 2
 
+[node name="StunnedUI" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_left = 48.0
+offset_top = 76.0
+offset_right = 348.0
+offset_bottom = 121.0
+
+[node name="StunText" type="Label" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 42.0
+text = "STUNNED:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 7.0
+offset_right = 299.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_anbr5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xxlm8")
+value = 100.0
+show_percentage = false
+
 [node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
 position = Vector2(1134, 340)
 
@@ -179,3 +210,5 @@ position = Vector2(160, 650)
 [connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
 [connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
+[connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_player_finished_stun"]
+[connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_player_stunned"]

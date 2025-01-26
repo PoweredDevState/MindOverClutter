@@ -20,6 +20,8 @@ var chargeTime : int
 var readyToAttack := true
 @export var attackIndiactorScene : PackedScene
 var attackIndiactor : Object
+@export var attackScene : PackedScene
+var attackObject : Object
 var attackPosition : Vector2
 
 @onready var chargeTimerRef := $ChargeTimer
@@ -105,6 +107,12 @@ func _on_indicator_timer_timeout() -> void:
 
 func spawn_attack() -> void:
 	attackIndiactor.queue_free()
+	
+	#Spawn Attack
+	attackObject = attackScene.instantiate()
+	attackObject.global_position = attackPosition
+	get_parent().add_child.call_deferred(attackObject)
+	
 	currentAttackState = AttackStates.RECHARGE
 
 func _on_recharge_timer_timeout() -> void:

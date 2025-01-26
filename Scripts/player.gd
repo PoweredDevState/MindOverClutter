@@ -2,8 +2,20 @@ extends CharacterBody2D
 
 @export var speed := 300.0
 
-func _physics_process(delta: float) -> void:
+var isStunned := false
+var normalColor : Color
+@export var stunColor := Color.DARK_RED
+@export var stunTime := 3
+@onready var spriteRef := $PlayerSprite
+@onready var stunTimerRef := $StunTimer
+signal player_stunned
+signal player_finished_stun
 
+func _ready() -> void:
+	normalColor = spriteRef.self_modulate
+	stunTimerRef.wait_time = stunTime
+
+func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	
 	#NOTE: get_axis treats move_up as negative and move_down as positive
@@ -19,6 +31,28 @@ func _physics_process(delta: float) -> void:
 	'''
 	
 	#move_and_slide()
-	move_and_collide(velocity * delta)
+	if isStunned == false:
+		move_and_collide(velocity * delta)
 	
+func set_stun(state : bool) -> void:
+	isStunned = state
+	_set_sprite_color()
 	
+	if isStunned == true:
+		_start_timer()
+		
+	
+func _set_sprite_color() -> void:
+	if isStunned == true:
+		spriteRef.self_modulate = stunColor
+	else:
+		spriteRef.self_modulate = normalColor
+
+func _start_timer() -> void:
+	stunTimerRef.start()
+	player_stunned.emit()
+
+func _on_stun_timer_timeout() -> void:
+	stunTimerRef.stop()
+	set_stun(false)
+	player_finished_stun.emit()
