@@ -2,14 +2,20 @@ extends CharacterBody2D
 
 @export var speed := 300.0
 
+#for the stun mechanic
 var isStunned := false
 var normalColor : Color
 @export var stunColor := Color.DARK_RED
 @export var stunTime := 3
 @onready var spriteRef := $PlayerSprite
 @onready var stunTimerRef := $StunTimer
+
+#signals for the playerUI script
 signal player_stunned
 signal player_finished_stun
+
+#for the shield powerup
+var shielded := false
 
 func _ready() -> void:
 	normalColor = spriteRef.self_modulate
@@ -33,10 +39,16 @@ func _physics_process(delta: float) -> void:
 	#move_and_slide()
 	if isStunned == false:
 		move_and_collide(velocity * delta)
-	
+
+#This function changes the stun state based on the parameter.
+#If the player has the shield power-up, the player is not stunned,
+#but the shield power-up is disabled
 func set_stun(state : bool) -> void:
-	isStunned = state
-	_set_sprite_color()
+	if shielded == false:
+		isStunned = state
+		_set_sprite_color()
+	else:
+		shielded = false
 	
 	if isStunned == true:
 		_start_timer()

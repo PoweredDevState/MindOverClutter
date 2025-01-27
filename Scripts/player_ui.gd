@@ -2,11 +2,10 @@ extends Control
 
 @onready var lifeNumRef := $LifeNumber
 @onready var gameManagerRef := $"../GameManager"
-
 @onready var playerRef := $"../Player"
 @onready var stunUIRef := $StunnedUI
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	lifeNumRef.text = str(gameManagerRef.lives)
 	stunUIRef.get_node("ProgressBar").max_value = \
@@ -15,7 +14,7 @@ func _ready() -> void:
 		+ playerRef.get_node("StunTimer").wait_time
 	stunUIRef.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if stunUIRef.visible == true:
 		stunUIRef.get_node("ProgressBar").value = \
 			+ playerRef.get_node("StunTimer").time_left
