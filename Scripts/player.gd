@@ -15,7 +15,9 @@ signal player_stunned
 signal player_finished_stun
 
 #for the shield powerup
-var shielded := false
+var isShielded := false
+var numOfShields := 0
+signal shield_state_changed
 
 func _ready() -> void:
 	normalColor = spriteRef.self_modulate
@@ -40,15 +42,24 @@ func _physics_process(delta: float) -> void:
 	if isStunned == false:
 		move_and_collide(velocity * delta)
 
+
+func set_shield(state : bool) -> void:
+	isShielded = state
+	if isShielded == true:
+		numOfShields += 1
+	else:
+		numOfShields -= 1
+	shield_state_changed.emit(isShielded)
+
 #This function changes the stun state based on the parameter.
 #If the player has the shield power-up, the player is not stunned,
 #but the shield power-up is disabled
 func set_stun(state : bool) -> void:
-	if shielded == false:
+	if numOfShields == 0:
 		isStunned = state
 		_set_sprite_color()
 	else:
-		shielded = false
+		set_shield(false)
 	
 	if isStunned == true:
 		_start_timer()

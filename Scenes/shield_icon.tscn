@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brjab31847bob"]
+
+[ext_resource type="Texture2D" uid="uid://do2bkns0gyifh" path="res://Assets/Shield.png" id="1_46jk7"]
+
+[node name="ShieldIcon" type="TextureRect"]
+texture = ExtResource("1_46jk7")
+expand_mode = 3
+stretch_mode = 4

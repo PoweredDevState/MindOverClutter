@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=14 format=3 uid="uid://dov7ysq5n1piu"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_6w28x"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="1_as5qm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="2_rme3n"]
 [ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="7_kxgy1"]
 [ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="8_7e3hk"]
+[ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="8_8wk55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
 size = Vector2(39, 660)
@@ -40,7 +41,6 @@ shape = SubResource("RectangleShape2D_xuxqu")
 
 [node name="Player" parent="." instance=ExtResource("1_sq167")]
 position = Vector2(146, 352)
-collision_mask = 5
 
 [node name="AllBlocks" type="Node2D" parent="."]
 position = Vector2(856, 335)
@@ -153,6 +153,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("1_6w28x")
+shieldIconScene = ExtResource("8_8wk55")
 
 [node name="LifeText" type="Label" parent="PlayerUI"]
 layout_mode = 0
@@ -167,11 +168,10 @@ label_settings = SubResource("LabelSettings_0j6qy")
 layout_mode = 0
 offset_left = 140.0
 offset_top = 29.0
-offset_right = 200.0
+offset_right = 184.0
 offset_bottom = 71.0
 text = "0"
 label_settings = SubResource("LabelSettings_0j6qy")
-horizontal_alignment = 2
 
 [node name="StunnedUI" type="Control" parent="PlayerUI"]
 anchors_preset = 0
@@ -198,6 +198,13 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xxlm8")
 value = 100.0
 show_percentage = false
 
+[node name="ShieldIconContainer" type="HBoxContainer" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 33.0
+offset_right = 258.0
+offset_bottom = 78.0
+
 [node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
 position = Vector2(1134, 340)
 
@@ -212,3 +219,4 @@ position = Vector2(160, 650)
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
 [connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_player_finished_stun"]
 [connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_player_stunned"]
+[connection signal="shield_state_changed" from="Player" to="PlayerUI" method="_on_player_shield_state_changed"]

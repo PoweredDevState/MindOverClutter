@@ -5,6 +5,9 @@ extends Control
 @onready var playerRef := $"../Player"
 @onready var stunUIRef := $StunnedUI
 
+@onready var ShieldIconContainerRef := $ShieldIconContainer
+@export var shieldIconScene : PackedScene
+var shieldIcon : TextureRect
 
 func _ready() -> void:
 	lifeNumRef.text = str(gameManagerRef.lives)
@@ -13,6 +16,7 @@ func _ready() -> void:
 	stunUIRef.get_node("ProgressBar").value = \
 		+ playerRef.get_node("StunTimer").wait_time
 	stunUIRef.visible = false
+	
 
 func _process(_delta: float) -> void:
 	if stunUIRef.visible == true:
@@ -27,3 +31,10 @@ func _on_player_player_stunned() -> void:
 
 func _on_player_player_finished_stun() -> void:
 	stunUIRef.visible = false
+
+func _on_player_shield_state_changed(state : bool) -> void:
+	if state == true:
+		shieldIcon = shieldIconScene.instantiate()
+		ShieldIconContainerRef.add_child.call_deferred(shieldIcon)
+	else:
+		ShieldIconContainerRef.get_child(0).queue_free()
