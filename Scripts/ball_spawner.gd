@@ -1,33 +1,41 @@
 extends Node2D
 
-@export var ball_scene : PackedScene
+@export var ballScene : PackedScene
+@onready var gameManagerRef := $"../GameManager"
+@onready var timerRef := $BallSpawnTimer
 
-# Called when the node enters the scene tree for the first time.
+#This calls the function to spawn the first ball
 func _ready() -> void:
-	#print(get_parent())
 	spawn_ball()
 
-
+#This function creates the ball object 
+#	and spawns it in the same global position as the spawner.
+#It then adds it to the game manager
 func spawn_ball():
-	var ball = ball_scene.instantiate()
+	var ball = ballScene.instantiate()
 	get_parent().add_child.call_deferred(ball)
 	ball.position = self.global_position
-	$"../GameManager".add_ball()
-	
+	gameManagerRef.add_ball()
+
+#This function creates the ball object 
+#	and spawns it in the same global position as the block it spawned from.
+#It then adds it to the game manager
 func spawn_ball_from_block(block_position : Vector2):
-	var ball = ball_scene.instantiate()
+	var ball = ballScene.instantiate()
 	get_parent().add_child.call_deferred(ball)
 	ball.position = block_position
-	$"../GameManager".add_ball()
-	#print("Spawned Another Ball")
+	gameManagerRef.add_ball()
 
-
+#This function is called when the signal 
+#	inside of the game manager script is emitted.
+#It gets emitted when there are no more balls on the screen
+#This function starts a cooldown timer
 func _on_game_manager_zero_balls_on_screen() -> void:
-	#print("Start Timer")
-	$BallSpawnTimer.start()
+	timerRef.start()
 
-
+#This function is called when the timer is done
+#This function stops the timer and spawns another ball
 func _on_timer_timeout() -> void:
 	#print("Stop Timer")
-	$BallSpawnTimer.stop()
+	timerRef.stop()
 	spawn_ball()

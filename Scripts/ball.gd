@@ -48,25 +48,11 @@ func _physics_process(delta: float) -> void:
 				speed += acceleration
 				collider.reduce_health()
 				
-		'''
-		#if statement method
-		if (collider.collision_layer == 1 
-			or collider.collision_layer == 2
-			or collider.collision_layer == 4):
-			speed += acceleration
-			#direction = new_direction(collider)
-		
-		if collider.collision_layer == 2:
-			collider.reduce_strength()
-			#direction = new_direction(collider)
-		'''
-		
-		
 		direction = direction.bounce(collision.get_normal())
 
 
 #randomly sets the angle of the ball will shoot at when the game starts
 func random_starting_direction() -> Vector2:
-	var new_dir := Vector2(-1, randf_range(-0.9, 0.9))
-	return new_dir.normalized()
+	var newDir := Vector2(-1, randf_range(-0.9, 0.9))
+	return newDir.normalized()
 	

@@ -1,16 +1,8 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+#This function is called when the ball enters the area.
+#This destroys the ball and subtracts it from the game manager
 func _on_body_entered(body: Node2D) -> void:
 	body.queue_free()
 	$"../GameManager".subtract_ball()

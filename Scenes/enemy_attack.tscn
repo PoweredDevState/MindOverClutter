@@ -55,7 +55,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5vs"]
 size = Vector2(121, 93)
 
-[node name="Area2D" type="Area2D"]
+[node name="EnemyAttack" type="Area2D"]
+collision_layer = 32
 script = ExtResource("1_m1sda")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

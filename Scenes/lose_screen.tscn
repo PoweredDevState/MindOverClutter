@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://clvrde8jqq25h"]
+
+[ext_resource type="Script" path="res://Scripts/lose_screen.gd" id="1_k4qlf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iehe6"]
+font_size = 100
+
+[node name="LoseScreen" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k4qlf")
+menuSceneFilePath = "res://Scenes/main_scene.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.345098)
+
+[node name="LifeText" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 78.0
+offset_right = 865.0
+offset_bottom = 214.0
+text = "You Lose"
+label_settings = SubResource("LabelSettings_iehe6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 474.0
+offset_right = 458.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 474.0
+offset_right = 1010.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Menu"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -1,29 +1,39 @@
 extends Node2D
 
 @export var lives := 2
-@export var balls_on_screen := 0
+var ballsOnScreen := 0
+
+@export var loseScreen : PackedScene
+@export var winScreen : PackedScene
 
 signal zero_balls_on_screen
 signal lives_changed
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-func add_ball():
-	balls_on_screen += 1
+func add_ball() -> void:
+	ballsOnScreen += 1
 	
-func subtract_ball():
-	balls_on_screen -= 1
+func subtract_ball() -> void:
+	ballsOnScreen -= 1
 	
-	if balls_on_screen <= 0:
+	if ballsOnScreen <= 0:
 		lose_life()
 		
-func lose_life():
+func lose_life() -> void:
 	lives -= 1
 	
 	if lives < 0:
 		print("Lose")
+		var loseScreenObj = loseScreen.instantiate()
+		get_parent().add_child.call_deferred(loseScreenObj)
+		var currentScenePath = get_tree().current_scene.scene_file_path
+		loseScreenObj.set_current_scene_name(currentScenePath)
 	else:
 		lives_changed.emit()
 		zero_balls_on_screen.emit()
+		
+		
+func win_game() -> void:
+	var winScreenObj = winScreen.instantiate()
+	get_parent().add_child.call_deferred(winScreenObj)
+	

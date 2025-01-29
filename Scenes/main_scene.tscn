@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=16 format=3 uid="uid://dov7ysq5n1piu"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_6w28x"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="1_as5qm"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_dc0ml"]
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="1_sq167"]
+[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/lose_screen.tscn" id="2_fd316"]
 [ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="2_kuwch"]
 [ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="2_rme3n"]
+[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/win_screen.tscn" id="3_f0evm"]
 [ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="7_kxgy1"]
 [ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="8_7e3hk"]
 [ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="8_8wk55"]
@@ -26,6 +28,8 @@ bg_color = Color(0.68, 0.147333, 0.0408, 1)
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("1_dc0ml")
+loseScreen = ExtResource("2_fd316")
+winScreen = ExtResource("3_f0evm")
 
 [node name="BallSpawner" parent="." instance=ExtResource("2_kuwch")]
 position = Vector2(549, 340)
@@ -217,6 +221,6 @@ position = Vector2(160, 650)
 [connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
 [connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
-[connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_player_finished_stun"]
-[connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_player_stunned"]
+[connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_finished_stun"]
+[connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_stunned"]
 [connection signal="shield_state_changed" from="Player" to="PlayerUI" method="_on_player_shield_state_changed"]

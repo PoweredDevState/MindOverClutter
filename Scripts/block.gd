@@ -1,51 +1,64 @@
 extends StaticBody2D
 
-var block_strength : int
-var block_color : Color
-var random_item_number : int
+var blockStrength : int
+var blockColor : Color
+var randomItemNumber : int
 
 @export var shieldPowerUpScene : PackedScene
 var shieldPowerUp : Object
 
+@onready var spriteRef := $Sprite2D
+
 func _init() -> void:
 	randomize_block_strength()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	change_block_color()
-	
+
+#This function reduces the strength of the block.
+#When the strength reaches 0, call the drop_item function 
+#	and destroy the block
+#This also calls the change_block_color function 
+#	when there is still strength left
 func reduce_strength() -> void:
-	block_strength -= 1
+	blockStrength -= 1
 	
-	if block_strength == 0:
+	if blockStrength == 0:
 		drop_item()
 		queue_free()
 	else:
 		change_block_color()
 
+#This function changes the color of the sprite based on the blockStrength
 func change_block_color() -> void:
-	if block_strength == 1:
-		block_color = Color.RED
-	elif block_strength == 2:
-		block_color = Color.YELLOW
-	elif block_strength == 3:
-		block_color = Color.GREEN
+	if blockStrength == 1:
+		blockColor = Color.RED
+	elif blockStrength == 2:
+		blockColor = Color.YELLOW
+	elif blockStrength == 3:
+		blockColor = Color.GREEN
 	else:
-		block_color = Color.BLUE
+		blockColor = Color.BLUE
 		
-	$Sprite2D.self_modulate = block_color
-	
+	spriteRef.self_modulate = blockColor
+
+
 func randomize_block_strength() -> void:
-	block_strength = randi_range(1, 4)
-	
+	blockStrength = randi_range(1, 4)
+
+
 func drop_item() -> void:
-	random_item_number = randi_range(0, 10)
+	randomItemNumber = randi_range(0, 10)
 	
-	if random_item_number >= 6 and random_item_number <= 8:
+	#if the number is between 6 and 8, spawn another ball.
+	#if the number is between 3 and 5, spawn a shield power up
+	if randomItemNumber >= 6 and randomItemNumber <= 8:
 		get_node("/root/Main2D/BallSpawner").spawn_ball_from_block(self.global_position)
-	elif random_item_number >= 3 and random_item_number <= 5:
+	elif randomItemNumber >= 3 and randomItemNumber <= 5:
 		spawn_shield()
-	
+
+#This function creates the shield object 
+#	and spawns it in the same global position as the block it spawned from.
 func spawn_shield() -> void:
 	shieldPowerUp = shieldPowerUpScene.instantiate()
 	shieldPowerUp.global_position = self.global_position
