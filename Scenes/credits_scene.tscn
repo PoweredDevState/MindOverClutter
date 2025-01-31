@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0v2vjcfd7700"]
+
+[ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_mxocw"]
+[ext_resource type="PackedScene" uid="uid://16wowo6lktx2" path="res://Scenes/main_menu.tscn" id="2_pv4oh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nddws"]
+font_size = 75
+
+[sub_resource type="LabelSettings" id="LabelSettings_mkh6k"]
+font_size = 30
+
+[node name="CreditsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mxocw")
+menuFilePath = "res://Scenes/main_menu.tscn"
+menuScene = ExtResource("2_pv4oh")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 445.0
+offset_top = 39.0
+offset_right = 796.0
+offset_bottom = 161.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_nddws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 214.0
+offset_right = 1204.0
+offset_bottom = 486.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "This game was made by Jonathan Dervin
+Sprites Used:
+- Player and Ball Sprites made by GrafxKid on OpenGameArt
+- Attack Sprite made by den_yes on OpenGameArt
+- Shield Sprite made by BizmasterStudios on OpenGameArt
+- Paddle, Block, and Attack Indicator Sprites made by me"
+label_settings = SubResource("LabelSettings_mkh6k")
+autowrap_mode = 1
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 506.0
+offset_top = 538.0
+offset_right = 758.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 45
+text = "Menu"
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -5,10 +5,15 @@ var ballsOnScreen := 0
 
 @export var loseScreen : PackedScene
 @export var winScreen : PackedScene
+@export var pauseScreen : PackedScene
 
 signal zero_balls_on_screen
 signal lives_changed
 
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("pause"):
+		var pauseScreenObj = pauseScreen.instantiate()
+		get_parent().add_child.call_deferred(pauseScreenObj)
 
 func add_ball() -> void:
 	ballsOnScreen += 1
@@ -26,8 +31,6 @@ func lose_life() -> void:
 		print("Lose")
 		var loseScreenObj = loseScreen.instantiate()
 		get_parent().add_child.call_deferred(loseScreenObj)
-		var currentScenePath = get_tree().current_scene.scene_file_path
-		loseScreenObj.set_current_scene_name(currentScenePath)
 	else:
 		lives_changed.emit()
 		zero_balls_on_screen.emit()

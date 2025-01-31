@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://dov7ysq5n1piu"]
+[gd_scene load_steps=17 format=3 uid="uid://dov7ysq5n1piu"]
 
-[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_6w28x"]
-[ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="1_as5qm"]
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_dc0ml"]
-[ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="1_sq167"]
-[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/lose_screen.tscn" id="2_fd316"]
-[ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="2_kuwch"]
-[ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="2_rme3n"]
-[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/win_screen.tscn" id="3_f0evm"]
-[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="7_kxgy1"]
-[ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="8_7e3hk"]
-[ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="8_8wk55"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_heq6h"]
+[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/lose_screen.tscn" id="2_dli7n"]
+[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/win_screen.tscn" id="3_n2l3i"]
+[ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="4_7h1ft"]
+[ext_resource type="PackedScene" uid="uid://dpwmoutru23ue" path="res://Scenes/pause_screen.tscn" id="4_eql3b"]
+[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="5_g0cp4"]
+[ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="6_20xd0"]
+[ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="7_1rcx7"]
+[ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="8_u6dy3"]
+[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="9_wbtf5"]
+[ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="10_ff4rn"]
+[ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="11_4nif5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
 size = Vector2(39, 660)
@@ -27,23 +28,24 @@ bg_color = Color(0.68, 0.147333, 0.0408, 1)
 [node name="Main2D" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("1_dc0ml")
-loseScreen = ExtResource("2_fd316")
-winScreen = ExtResource("3_f0evm")
+script = ExtResource("1_heq6h")
+loseScreen = ExtResource("2_dli7n")
+winScreen = ExtResource("3_n2l3i")
+pauseScreen = ExtResource("4_eql3b")
 
-[node name="BallSpawner" parent="." instance=ExtResource("2_kuwch")]
+[node name="BallSpawner" parent="." instance=ExtResource("4_7h1ft")]
 position = Vector2(549, 340)
 
 [node name="BallDeleter" type="Area2D" parent="."]
 position = Vector2(0, 343)
 collision_mask = 8
-script = ExtResource("7_kxgy1")
+script = ExtResource("5_g0cp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BallDeleter"]
 position = Vector2(1.5, 16)
 shape = SubResource("RectangleShape2D_xuxqu")
 
-[node name="Player" parent="." instance=ExtResource("1_sq167")]
+[node name="Player" parent="." instance=ExtResource("6_20xd0")]
 position = Vector2(146, 352)
 
 [node name="AllBlocks" type="Node2D" parent="."]
@@ -52,101 +54,101 @@ position = Vector2(856, 335)
 [node name="BlockRow" type="Node2D" parent="AllBlocks"]
 position = Vector2(-49, -4)
 
-[node name="Block" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -267)
 
-[node name="Block2" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block2" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -195)
 
-[node name="Block3" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block3" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -121)
 
-[node name="Block4" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block4" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -50)
 
-[node name="Block5" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block5" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 22)
 
-[node name="Block6" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block6" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 93)
 
-[node name="Block8" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block8" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 167)
 
-[node name="Block9" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block9" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 240)
 
-[node name="Block10" parent="AllBlocks/BlockRow" instance=ExtResource("1_as5qm")]
+[node name="Block10" parent="AllBlocks/BlockRow" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 314)
 
 [node name="BlockRow2" type="Node2D" parent="AllBlocks"]
 position = Vector2(-6, -4)
 
-[node name="Block" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -267)
 
-[node name="Block2" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block2" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -195)
 
-[node name="Block3" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block3" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -121)
 
-[node name="Block4" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block4" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -50)
 
-[node name="Block5" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block5" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 22)
 
-[node name="Block6" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block6" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 93)
 
-[node name="Block8" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block8" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 167)
 
-[node name="Block9" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block9" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 240)
 
-[node name="Block10" parent="AllBlocks/BlockRow2" instance=ExtResource("1_as5qm")]
+[node name="Block10" parent="AllBlocks/BlockRow2" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 314)
 
 [node name="BlockRow3" type="Node2D" parent="AllBlocks"]
 position = Vector2(37, -4)
 
-[node name="Block" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -267)
 
-[node name="Block2" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block2" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -195)
 
-[node name="Block3" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block3" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -121)
 
-[node name="Block4" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block4" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, -50)
 
-[node name="Block5" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block5" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 22)
 
-[node name="Block6" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block6" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 93)
 
-[node name="Block8" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block8" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 167)
 
-[node name="Block9" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block9" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 240)
 
-[node name="Block10" parent="AllBlocks/BlockRow3" instance=ExtResource("1_as5qm")]
+[node name="Block10" parent="AllBlocks/BlockRow3" instance=ExtResource("7_1rcx7")]
 position = Vector2(0, 314)
 
 [node name="Borders" type="Node2D" parent="."]
 
-[node name="StaticBorder2D" parent="Borders" instance=ExtResource("2_rme3n")]
+[node name="StaticBorder2D" parent="Borders" instance=ExtResource("8_u6dy3")]
 
-[node name="StaticBorder2D2" parent="Borders" instance=ExtResource("2_rme3n")]
+[node name="StaticBorder2D2" parent="Borders" instance=ExtResource("8_u6dy3")]
 position = Vector2(0, 692)
 
-[node name="StaticBorder2D4" parent="Borders" instance=ExtResource("2_rme3n")]
+[node name="StaticBorder2D4" parent="Borders" instance=ExtResource("8_u6dy3")]
 position = Vector2(1284, -10)
 rotation = 1.5708
 scale = Vector2(0.640001, 1)
@@ -156,8 +158,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-script = ExtResource("1_6w28x")
-shieldIconScene = ExtResource("8_8wk55")
+script = ExtResource("9_wbtf5")
+shieldIconScene = ExtResource("10_ff4rn")
 
 [node name="LifeText" type="Label" parent="PlayerUI"]
 layout_mode = 0
@@ -209,7 +211,7 @@ offset_top = 33.0
 offset_right = 258.0
 offset_bottom = 78.0
 
-[node name="Enemy" parent="." instance=ExtResource("8_7e3hk")]
+[node name="Enemy" parent="." instance=ExtResource("11_4nif5")]
 position = Vector2(1134, 340)
 
 [node name="StartAttackMark" type="Node2D" parent="."]

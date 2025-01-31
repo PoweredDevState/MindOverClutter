@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://clvrde8jqq25h"]
+[gd_scene load_steps=3 format=3 uid="uid://dpwmoutru23ue"]
 
-[ext_resource type="Script" path="res://Scripts/lose_screen.gd" id="1_k4qlf"]
+[ext_resource type="Script" path="res://Scripts/pause_screen.gd" id="1_rqewr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iehe6"]
 font_size = 100
 
-[node name="LoseScreen" type="Control"]
+[node name="PauseScreen" type="Control"]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k4qlf")
+script = ExtResource("1_rqewr")
 menuSceneFilePath = "res://Scenes/main_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -28,28 +28,38 @@ offset_left = 424.0
 offset_top = 78.0
 offset_right = 865.0
 offset_bottom = 214.0
-text = "You Lose"
+text = "Paused"
 label_settings = SubResource("LabelSettings_iehe6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResumeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 474.0
+offset_right = 367.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Resume"
+
 [node name="RetryButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 206.0
+offset_left = 489.0
 offset_top = 474.0
-offset_right = 458.0
+offset_right = 741.0
 offset_bottom = 589.0
 theme_override_font_sizes/font_size = 45
 text = "Retry"
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 758.0
+offset_left = 866.0
 offset_top = 474.0
-offset_right = 1010.0
+offset_right = 1118.0
 offset_bottom = 589.0
 theme_override_font_sizes/font_size = 45
 text = "Menu"
 
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

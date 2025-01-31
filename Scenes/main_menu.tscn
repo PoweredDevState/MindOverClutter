@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://16wowo6lktx2"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_tri5q"]
+[ext_resource type="PackedScene" uid="uid://dov7ysq5n1piu" path="res://Scenes/level_1.tscn" id="2_xde0o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ps5ad"]
+font_size = 100
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tri5q")
+startGameFilePath = "res://Scenes/level_1.tscn"
+creditsFilePath = "res://Scenes/credits_scene.tscn"
+startGameScene = ExtResource("2_xde0o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.101937, 0.290893, 0.34772, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 1065.0
+offset_bottom = 237.0
+text = "Mind Over Clutter"
+label_settings = SubResource("LabelSettings_ps5ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 474.0
+offset_right = 352.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Start"
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 474.0
+offset_right = 762.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 474.0
+offset_right = 1172.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 45
+text = "Exit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

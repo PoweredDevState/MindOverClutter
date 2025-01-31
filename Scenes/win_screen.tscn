@@ -14,8 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vl5s7")
-menuSceneFilePath = "res://Scenes/main_scene.tscn"
-firstLevelFilePath = "res://Scenes/main_scene.tscn"
+menuSceneFilePath = "res://Scenes/main_menu.tscn"
+firstLevelFilePath = "res://Scenes/level_1.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
