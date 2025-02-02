@@ -16,7 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_rqewr")
 menuSceneFilePath = "res://Scenes/main_menu.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0

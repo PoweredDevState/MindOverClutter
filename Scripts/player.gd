@@ -42,7 +42,14 @@ func _physics_process(delta: float) -> void:
 	if isStunned == false:
 		move_and_collide(velocity * delta)
 
-
+#This is called inside of the shield power up script 
+#	and in the set stun function
+#This function takes in a boolean 
+#	indicating that the player either got a shield or took damage.
+#If the boolean is true, increase the number of shields by 1.
+#Else, decrease the number of shields by 1.
+#This also emits a signal to the playerUI script 
+#	to change how many shields are shown to the player
 func set_shield(state : bool) -> void:
 	isShielded = state
 	if isShielded == true:

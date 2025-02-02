@@ -20,7 +20,13 @@ script = ExtResource("1_mxocw")
 menuFilePath = "res://Scenes/main_menu.tscn"
 menuScene = ExtResource("2_pv4oh")
 
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.50228, 0.1914, 0.58, 1)
+
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 39.0
 offset_right = 796.0
@@ -29,6 +35,13 @@ text = "Credits"
 label_settings = SubResource("LabelSettings_nddws")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScrollContainerBackground" type="ColorRect" parent="."]
+offset_left = 104.0
+offset_top = 214.0
+offset_right = 1196.0
+offset_bottom = 486.0
+color = Color(0.2176, 0.34, 0.33184, 0.643137)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
@@ -49,13 +62,15 @@ layout_mode = 2
 text = "This game was made by Jonathan Dervin
 Sprites Used:
 - Player and Ball Sprites made by GrafxKid on OpenGameArt
+- Enemy sprites are from a Zenva Academy course: Build a Micro Turn-Based RPG with Godot 4 by Daniel Buckley
 - Attack Sprite made by den_yes on OpenGameArt
 - Shield Sprite made by BizmasterStudios on OpenGameArt
 - Paddle, Block, and Attack Indicator Sprites made by me"
 label_settings = SubResource("LabelSettings_mkh6k")
-autowrap_mode = 1
+autowrap_mode = 2
 
 [node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 506.0
 offset_top = 538.0
 offset_right = 758.0

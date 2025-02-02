@@ -18,7 +18,7 @@ startGameFilePath = "res://Scenes/level_1.tscn"
 creditsFilePath = "res://Scenes/credits_scene.tscn"
 startGameScene = ExtResource("2_xde0o")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0

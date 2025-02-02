@@ -17,7 +17,7 @@ script = ExtResource("1_vl5s7")
 menuSceneFilePath = "res://Scenes/main_menu.tscn"
 firstLevelFilePath = "res://Scenes/level_1.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0

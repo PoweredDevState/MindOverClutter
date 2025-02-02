@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 400.0
 @export var acceleration := 20.0
+@export var wall_acceleration := 5.0
 
 var direction : Vector2
 
@@ -28,9 +29,10 @@ func _physics_process(delta: float) -> void:
 		#increase the speed with each collision
 		
 		#match statement method
-		#NOTE: the collision_layer value is based on what is said
-		#	   when you hover on the layer
+		#NOTE: the collision_layer value is based on 
+		#		the value stated when you hover on the layer
 		#EX: Layer 5: Enemy | Bit 4 | Value 16
+		#The value that must be checked for in the Enemy layer is 16
 		match collider.collision_layer:
 			#Player and Ball
 			1, 8:
@@ -41,6 +43,10 @@ func _physics_process(delta: float) -> void:
 			2:
 				speed += acceleration
 				collider.reduce_strength()
+				
+			#Wall
+			4:
+				speed += wall_acceleration
 
 			#Enemy
 			16:
@@ -48,6 +54,7 @@ func _physics_process(delta: float) -> void:
 				speed += acceleration
 				collider.reduce_health()
 				
+		#This changes the direction of the ball to the opposite direction
 		direction = direction.bounce(collision.get_normal())
 
 
