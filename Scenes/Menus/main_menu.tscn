@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://16wowo6lktx2"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_tri5q"]
-[ext_resource type="PackedScene" uid="uid://dov7ysq5n1piu" path="res://Scenes/level_1.tscn" id="2_xde0o"]
+[ext_resource type="PackedScene" uid="uid://dov7ysq5n1piu" path="res://Scenes/Levels/level_1.tscn" id="2_xde0o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ps5ad"]
 font_size = 100
@@ -14,8 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tri5q")
-startGameFilePath = "res://Scenes/level_1.tscn"
-creditsFilePath = "res://Scenes/credits_scene.tscn"
+startGameFilePath = "res://Scenes/Levels/level_1.tscn"
+creditsFilePath = "res://Scenes/Menus/credits_scene.tscn"
 startGameScene = ExtResource("2_xde0o")
 
 [node name="Background" type="ColorRect" parent="."]

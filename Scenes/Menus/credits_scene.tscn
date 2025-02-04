@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0v2vjcfd7700"]
 
 [ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_mxocw"]
-[ext_resource type="PackedScene" uid="uid://16wowo6lktx2" path="res://Scenes/main_menu.tscn" id="2_pv4oh"]
+[ext_resource type="PackedScene" uid="uid://16wowo6lktx2" path="res://Scenes/Menus/main_menu.tscn" id="2_pv4oh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nddws"]
 font_size = 75
@@ -17,10 +17,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mxocw")
-menuFilePath = "res://Scenes/main_menu.tscn"
+menuFilePath = "res://Scenes/Menus/main_menu.tscn"
 menuScene = ExtResource("2_pv4oh")
 
 [node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.50228, 0.1914, 0.58, 1)
@@ -37,6 +38,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainerBackground" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 104.0
 offset_top = 214.0
 offset_right = 1196.0

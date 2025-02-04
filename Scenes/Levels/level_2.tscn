@@ -1,0 +1,200 @@
+[gd_scene load_steps=18 format=3 uid="uid://bkw8llyw3ebmx"]
+
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_26d31"]
+[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/Screens/lose_screen.tscn" id="2_4nwht"]
+[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/Screens/win_screen.tscn" id="3_hmo5u"]
+[ext_resource type="PackedScene" uid="uid://dpwmoutru23ue" path="res://Scenes/Screens/pause_screen.tscn" id="4_rfqgv"]
+[ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="5_hx3mg"]
+[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="6_wqpsv"]
+[ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="7_omncg"]
+[ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="8_fijs6"]
+[ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="9_ckv61"]
+[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="10_32ss8"]
+[ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="11_utakj"]
+[ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="12_8k8vf"]
+[ext_resource type="Resource" uid="uid://dhkpnc3rvydy0" path="res://Enemy Resources/Reptile_Enemy.tres" id="13_q0xam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
+size = Vector2(39, 660)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0j6qy"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anbr5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxlm8"]
+bg_color = Color(0.68, 0.147333, 0.0408, 1)
+
+[node name="Main2D" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_26d31")
+loseScreen = ExtResource("2_4nwht")
+winScreen = ExtResource("3_hmo5u")
+pauseScreen = ExtResource("4_rfqgv")
+
+[node name="BallSpawner" parent="." instance=ExtResource("5_hx3mg")]
+position = Vector2(549, 340)
+
+[node name="BallDeleter" type="Area2D" parent="."]
+position = Vector2(0, 343)
+collision_mask = 8
+script = ExtResource("6_wqpsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallDeleter"]
+position = Vector2(1.5, 16)
+shape = SubResource("RectangleShape2D_xuxqu")
+
+[node name="Player" parent="." instance=ExtResource("7_omncg")]
+position = Vector2(146, 352)
+
+[node name="AllBlocks" type="Node2D" parent="."]
+position = Vector2(856, 335)
+
+[node name="BlockRow2" type="Node2D" parent="AllBlocks"]
+position = Vector2(-6, -4)
+
+[node name="Block" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, -267)
+
+[node name="Block2" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, -195)
+
+[node name="Block3" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(0, -121)
+
+[node name="Block4" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(0, -50)
+
+[node name="Block5" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 22)
+
+[node name="Block6" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(0, 93)
+
+[node name="Block8" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(0, 167)
+
+[node name="Block9" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 240)
+
+[node name="Block10" parent="AllBlocks/BlockRow2" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 314)
+
+[node name="BlockRow3" type="Node2D" parent="AllBlocks"]
+position = Vector2(37, -4)
+
+[node name="Block" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, -267)
+
+[node name="Block2" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, -195)
+
+[node name="Block3" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(0, -121)
+
+[node name="Block4" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(0, -50)
+
+[node name="Block5" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 22)
+
+[node name="Block6" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(0, 93)
+
+[node name="Block8" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(0, 167)
+
+[node name="Block9" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 240)
+
+[node name="Block10" parent="AllBlocks/BlockRow3" instance=ExtResource("8_fijs6")]
+position = Vector2(-80, 314)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBorder2D" parent="Borders" instance=ExtResource("9_ckv61")]
+
+[node name="StaticBorder2D2" parent="Borders" instance=ExtResource("9_ckv61")]
+position = Vector2(0, 692)
+
+[node name="StaticBorder2D4" parent="Borders" instance=ExtResource("9_ckv61")]
+position = Vector2(1284, -10)
+rotation = 1.5708
+scale = Vector2(0.640001, 1)
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("10_32ss8")
+shieldIconScene = ExtResource("11_utakj")
+
+[node name="LifeText" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 29.0
+offset_right = 126.0
+offset_bottom = 71.0
+text = "Lives:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="LifeNumber" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 29.0
+offset_right = 184.0
+offset_bottom = 71.0
+text = "0"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="StunnedUI" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 76.0
+offset_right = 345.0
+offset_bottom = 121.0
+
+[node name="StunText" type="Label" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 42.0
+text = "STUNNED:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 7.0
+offset_right = 299.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_anbr5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xxlm8")
+value = 100.0
+show_percentage = false
+
+[node name="ShieldIconContainer" type="HBoxContainer" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 33.0
+offset_right = 258.0
+offset_bottom = 78.0
+
+[node name="Enemy" parent="." instance=ExtResource("12_8k8vf")]
+position = Vector2(1134, 340)
+enemyResource = ExtResource("13_q0xam")
+
+[node name="StartAttackMark" type="Node2D" parent="."]
+position = Vector2(160, 43)
+
+[node name="EndAttackMark" type="Node2D" parent="."]
+position = Vector2(160, 650)
+
+[connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
+[connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
+[connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
+[connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_finished_stun"]
+[connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_stunned"]
+[connection signal="shield_state_changed" from="Player" to="PlayerUI" method="_on_player_shield_state_changed"]
