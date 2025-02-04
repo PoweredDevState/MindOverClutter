@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+@export var enemyResource : EnemyResource
+
 #For Health Management
 var currentHealth : int
-@export var maxHealth := 3
+var maxHealth := 3
 var healthPercentage : float
 signal health_changed
+
 
 '''For Attacking'''
 enum AttackStates {CHARGE, INDICATING, ATTACK, RECHARGE}
@@ -20,7 +23,7 @@ var chargeTime : int
 var readyToAttack := true
 @export var attackIndiactorScene : PackedScene
 var attackIndiactor : Object
-@export var attackScene : PackedScene
+#@export var attackScene : PackedScene
 var attackObject : Object
 var attackPosition : Vector2
 @onready var chargeTimerRef := $ChargeTimer
@@ -29,6 +32,9 @@ var attackPosition : Vector2
 
 #this sets up the health and the area where the enemy can attack
 func _ready() -> void:
+	#For when I will use resources for specific enemy data
+	$EnemySprite.texture = enemyResource.sprite
+	maxHealth = enemyResource.maxHealth
 	currentHealth = maxHealth
 	change_health_percentage()
 	
@@ -128,7 +134,7 @@ func spawn_attack() -> void:
 	attackIndiactor.queue_free()
 	
 	#Spawn Attack
-	attackObject = attackScene.instantiate()
+	attackObject = enemyResource.attackScene.instantiate()
 	attackObject.global_position = attackPosition
 	get_parent().add_child.call_deferred(attackObject)
 	

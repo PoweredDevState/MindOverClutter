@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=4 format=3 uid="uid://deq1yhpokc65y"]
+
+[ext_resource type="Script" path="res://Enemy Resources/enemy_resource.gd" id="1_dobvp"]
+[ext_resource type="PackedScene" uid="uid://sktcfc55oy1h" path="res://Scenes/enemy_attack.tscn" id="1_t3wn7"]
+[ext_resource type="Texture2D" uid="uid://bwqrmymux67on" path="res://Assets/Enemy Sprites/Snake.png" id="3_1hccf"]
+
+[resource]
+script = ExtResource("1_dobvp")
+sprite = ExtResource("3_1hccf")
+attackScene = ExtResource("1_t3wn7")
+maxHealth = 2

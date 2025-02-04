@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgqp05s0n22u"
-path="res://.godot/imported/Dragon.png-ddfd0f445ddb3786b63e7349a61305d9.ctex"
+uid="uid://cftplikp3pxl3"
+path="res://.godot/imported/Reptile.png-12a20f00904d127dc502601995b81e1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dragon.png"
-dest_files=["res://.godot/imported/Dragon.png-ddfd0f445ddb3786b63e7349a61305d9.ctex"]
+source_file="res://Assets/Enemy Sprites/Reptile.png"
+dest_files=["res://.godot/imported/Reptile.png-12a20f00904d127dc502601995b81e1f.ctex"]
 
 [params]
 

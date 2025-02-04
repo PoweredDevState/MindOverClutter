@@ -65,6 +65,15 @@ func set_stun(state : bool) -> void:
 	if numOfShields == 0:
 		isStunned = state
 		_set_sprite_color()
+		
+	#This condition is to prevent a bug 
+	#	where just when the player is stunned, 
+	#	if a shield is moving towards the player, 
+	#	the player gains a shield. And when the stun state is done, 
+	#	the color does not change immediately.
+	elif numOfShields != 0 && isStunned == true:
+		isStunned = state
+		_set_sprite_color()
 	else:
 		set_shield(false)
 	

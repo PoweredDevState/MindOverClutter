@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cftplikp3pxl3"
-path="res://.godot/imported/Reptile.png-0881f226e6ece2007a7fe0800145351f.ctex"
+uid="uid://ci7ngm5rjd14v"
+path="res://.godot/imported/Boar.png-3e978271077d9567b1f76425e6ffc0f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Reptile.png"
-dest_files=["res://.godot/imported/Reptile.png-0881f226e6ece2007a7fe0800145351f.ctex"]
+source_file="res://Assets/Enemy Sprites/Boar.png"
+dest_files=["res://.godot/imported/Boar.png-3e978271077d9567b1f76425e6ffc0f2.ctex"]
 
 [params]
 

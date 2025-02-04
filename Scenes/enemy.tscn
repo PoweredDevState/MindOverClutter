@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c71me4vbd2lju"]
+[gd_scene load_steps=8 format=3 uid="uid://c71me4vbd2lju"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_le81n"]
-[ext_resource type="Texture2D" uid="uid://bbgqp05s0n22u" path="res://Assets/Dragon.png" id="1_v00c6"]
 [ext_resource type="PackedScene" uid="uid://d0aw8x4lic3yx" path="res://Scenes/attack_indicator.tscn" id="2_ae8q2"]
 [ext_resource type="Script" path="res://Scripts/enemy_ui.gd" id="3_5lt8s"]
-[ext_resource type="PackedScene" uid="uid://sktcfc55oy1h" path="res://Scenes/enemy_attack.tscn" id="3_jhhrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ecoh"]
 size = Vector2(148, 131)
@@ -24,10 +22,8 @@ collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_le81n")
 attackIndiactorScene = ExtResource("2_ae8q2")
-attackScene = ExtResource("3_jhhrq")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_v00c6")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
