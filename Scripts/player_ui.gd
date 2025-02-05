@@ -2,7 +2,7 @@ extends Control
 
 #References to nodes in scene
 @onready var lifeNumRef := $LifeNumber
-@onready var gameManagerRef := $"../GameManager"
+#@onready var gameManagerRef := GameManager
 @onready var playerRef := $"../Player"
 @onready var stunUIRef := $StunnedUI
 @onready var ShieldIconContainerRef := $ShieldIconContainer
@@ -13,8 +13,11 @@ var shieldIcon : TextureRect
 
 #Sets up the UI at the start of the game
 func _ready() -> void:
+	
+	GameManager.lives_changed.connect(_on_game_manager_lives_changed)
+	
 	#Sets up the lives UI using the GameManager node
-	lifeNumRef.text = str(gameManagerRef.lives)
+	lifeNumRef.text = str(GameManager.lives)
 	
 	#Sets up the stun progress bar by setting the max value 
 	#	to the wait time
@@ -39,7 +42,7 @@ func _process(_delta: float) -> void:
 #It gets emitted when the lives is changed in the game manager script.
 #This function changes the text of lives number
 func _on_game_manager_lives_changed() -> void:
-	lifeNumRef.text = str(gameManagerRef.lives)
+	lifeNumRef.text = str(GameManager.lives)
 
 
 #This function is called when the signal 

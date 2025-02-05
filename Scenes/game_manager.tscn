@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwl8dixivj3f1"]
+
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_0xur1"]
+[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/Screens/lose_screen.tscn" id="2_co5m0"]
+[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/Screens/win_screen.tscn" id="3_py6f3"]
+[ext_resource type="PackedScene" uid="uid://dpwmoutru23ue" path="res://Scenes/Screens/pause_screen.tscn" id="4_yjmx0"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_0xur1")
+loseScreen = ExtResource("2_co5m0")
+winScreen = ExtResource("3_py6f3")
+pauseScreen = ExtResource("4_yjmx0")
+levelScenePaths = Array[String](["res://Scenes/Levels/level_1.tscn", "res://Scenes/Levels/level_2.tscn"])

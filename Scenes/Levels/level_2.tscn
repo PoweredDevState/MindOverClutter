@@ -1,9 +1,5 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkw8llyw3ebmx"]
+[gd_scene load_steps=14 format=3 uid="uid://bkw8llyw3ebmx"]
 
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_26d31"]
-[ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/Screens/lose_screen.tscn" id="2_4nwht"]
-[ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/Screens/win_screen.tscn" id="3_hmo5u"]
-[ext_resource type="PackedScene" uid="uid://dpwmoutru23ue" path="res://Scenes/Screens/pause_screen.tscn" id="4_rfqgv"]
 [ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="5_hx3mg"]
 [ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="6_wqpsv"]
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="7_omncg"]
@@ -27,12 +23,6 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.68, 0.147333, 0.0408, 1)
 
 [node name="Main2D" type="Node2D"]
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("1_26d31")
-loseScreen = ExtResource("2_4nwht")
-winScreen = ExtResource("3_hmo5u")
-pauseScreen = ExtResource("4_rfqgv")
 
 [node name="BallSpawner" parent="." instance=ExtResource("5_hx3mg")]
 position = Vector2(549, 340)
@@ -192,8 +182,6 @@ position = Vector2(160, 43)
 [node name="EndAttackMark" type="Node2D" parent="."]
 position = Vector2(160, 650)
 
-[connection signal="lives_changed" from="GameManager" to="PlayerUI" method="_on_game_manager_lives_changed"]
-[connection signal="zero_balls_on_screen" from="GameManager" to="BallSpawner" method="_on_game_manager_zero_balls_on_screen"]
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
 [connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_finished_stun"]
 [connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_stunned"]

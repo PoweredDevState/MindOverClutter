@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var gameManagerRef := $"../../GameManager"
+#@onready var gameManagerRef := GameManager
 
 
 #This function is called when the signal inside of the enemy script is emitted.
@@ -12,4 +12,4 @@ func _on_enemy_health_changed(health_value: float) -> void:
 	$ProgressBar.value = health_value
 	
 	if $ProgressBar.value <= 0:
-		gameManagerRef.win_game()
+		GameManager.win_game()
