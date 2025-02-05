@@ -9,7 +9,8 @@ extends Control
 #This function changes the current scene to the first level scene
 func _on_start_button_pressed() -> void:
 	#get_tree().change_scene_to_file(startGameFilePath)
-	get_tree().change_scene_to_packed(startGameScene)
+	GameManager.start_game()
+	#get_tree().change_scene_to_packed(startGameScene)
 
 #This is called when the credits button is pressed.
 #This function changes the current scene to the credits scene

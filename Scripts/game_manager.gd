@@ -12,6 +12,7 @@ var lives : int
 @export var levelScenePaths : Array[String]
 #var updatingLevelScenePaths : Array[String]
 var currentScenePath : String
+@export var currentSceneIndex : int
 
 signal zero_balls_on_screen
 signal lives_changed
@@ -44,20 +45,37 @@ func lose_life() -> void:
 	lives -= 1
 	
 	if lives < 0:
-		print("Lose")
+		#print("Lose")
 		var loseScreenObj = loseScreen.instantiate()
 		get_parent().add_child.call_deferred(loseScreenObj)
 	else:
 		lives_changed.emit()
 		zero_balls_on_screen.emit()
 
+func check_for_more_levels():
+	if currentSceneIndex == levelScenePaths.size() - 1:
+		win_game()
+	else:
+		next_level()
 
 #This is called in the enemy UI script
 func win_game() -> void:
 	var winScreenObj = winScreen.instantiate()
 	get_parent().add_child.call_deferred(winScreenObj)
 
-
 func reset_game():
+	currentSceneIndex = 0
 	ballsOnScreen = 0
 	lives = maxLives
+	
+func reset_balls():
+	ballsOnScreen = 0
+
+func start_game():
+	currentSceneIndex = 0
+	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])
+
+func next_level():
+	reset_balls()
+	currentSceneIndex += 1
+	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])

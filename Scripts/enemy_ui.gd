@@ -12,4 +12,4 @@ func _on_enemy_health_changed(health_value: float) -> void:
 	$ProgressBar.value = health_value
 	
 	if $ProgressBar.value <= 0:
-		GameManager.win_game()
+		GameManager.check_for_more_levels()
