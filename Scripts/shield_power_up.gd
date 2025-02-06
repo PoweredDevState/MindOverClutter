@@ -25,4 +25,5 @@ func _physics_process(delta: float) -> void:
 			1:
 				collider.set_shield(true)
 				queue_free()
+				GameManager.add_shield()
 	

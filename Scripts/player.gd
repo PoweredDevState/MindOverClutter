@@ -22,6 +22,13 @@ signal shield_state_changed
 func _ready() -> void:
 	normalColor = spriteRef.self_modulate
 	stunTimerRef.wait_time = stunTime
+	
+	if GameManager.currentShields != 0:
+		numOfShields = GameManager.currentShields
+		isShielded = true
+		
+		for num in numOfShields:
+			set_shield(true)
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -56,6 +63,7 @@ func set_shield(state : bool) -> void:
 		numOfShields += 1
 	else:
 		numOfShields -= 1
+		GameManager.add_shield()
 	shield_state_changed.emit(isShielded)
 
 #This function changes the stun state based on the parameter.

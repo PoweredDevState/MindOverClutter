@@ -1,7 +1,7 @@
 extends Control
 
 @export var menuSceneFilePath : String
-@export var firstLevelFilePath : String
+var firstLevelFilePath : String
 
 #When the scene is created, pause the game
 #NOTE: When the game is paused, 
@@ -13,6 +13,7 @@ extends Control
 #	and the buttons in this node.
 func _ready() -> void:
 	get_tree().paused = true
+	firstLevelFilePath = GameManager.levelScenePaths[0]
 
 #This is called when the restart button is pressed.
 #This function unpauses the game and goes to the first level scene

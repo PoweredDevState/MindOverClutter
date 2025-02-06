@@ -1,13 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwl8dixivj3f1"]
+[gd_scene load_steps=8 format=3 uid="uid://cwl8dixivj3f1"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_0xur1"]
 [ext_resource type="PackedScene" uid="uid://clvrde8jqq25h" path="res://Scenes/Screens/lose_screen.tscn" id="2_co5m0"]
 [ext_resource type="PackedScene" uid="uid://d4cvfd3gklfts" path="res://Scenes/Screens/win_screen.tscn" id="3_py6f3"]
 [ext_resource type="PackedScene" uid="uid://dpwmoutru23ue" path="res://Scenes/Screens/pause_screen.tscn" id="4_yjmx0"]
+[ext_resource type="Script" path="res://Scripts/level_finished_ui.gd" id="5_qutqx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqdaj"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fhqr"]
+font_size = 150
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_0xur1")
+levelFinishedTimerTime = 4
 loseScreen = ExtResource("2_co5m0")
 winScreen = ExtResource("3_py6f3")
 pauseScreen = ExtResource("4_yjmx0")
 levelScenePaths = Array[String](["res://Scenes/Levels/level_1.tscn", "res://Scenes/Levels/level_2.tscn"])
+
+[node name="LevelFinishedUI" type="Control" parent="."]
+process_mode = 2
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("5_qutqx")
+
+[node name="LevelFinishedTimer" type="Timer" parent="LevelFinishedUI"]
+
+[node name="Background" type="ColorRect" parent="LevelFinishedUI"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.3936, 0.96, 0.60128, 0.203922)
+
+[node name="LevelFinishedText" type="Label" parent="LevelFinishedUI"]
+offset_left = 248.0
+offset_top = 78.0
+offset_right = 1049.0
+offset_bottom = 215.0
+text = "Next Level in"
+label_settings = SubResource("LabelSettings_xqdaj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerText" type="Label" parent="LevelFinishedUI"]
+offset_left = 234.0
+offset_top = 279.0
+offset_right = 1035.0
+offset_bottom = 662.0
+label_settings = SubResource("LabelSettings_6fhqr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="LevelFinishedUI/LevelFinishedTimer" to="." method="_on_level_finished_timer_timeout"]

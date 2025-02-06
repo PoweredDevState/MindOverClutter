@@ -36,6 +36,64 @@ script = ExtResource("5_g0cp4")
 position = Vector2(1.5, 16)
 shape = SubResource("RectangleShape2D_xuxqu")
 
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("9_wbtf5")
+shieldIconScene = ExtResource("10_ff4rn")
+
+[node name="LifeText" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 29.0
+offset_right = 126.0
+offset_bottom = 71.0
+text = "Lives:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="LifeNumber" type="Label" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 29.0
+offset_right = 184.0
+offset_bottom = 71.0
+text = "0"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="StunnedUI" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 76.0
+offset_right = 345.0
+offset_bottom = 121.0
+
+[node name="StunText" type="Label" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 42.0
+text = "STUNNED:"
+label_settings = SubResource("LabelSettings_0j6qy")
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerUI/StunnedUI"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 7.0
+offset_right = 299.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_anbr5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xxlm8")
+value = 100.0
+show_percentage = false
+
+[node name="ShieldIconContainer" type="HBoxContainer" parent="PlayerUI"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 33.0
+offset_right = 258.0
+offset_bottom = 78.0
+
 [node name="Player" parent="." instance=ExtResource("6_20xd0")]
 position = Vector2(146, 352)
 
@@ -114,64 +172,6 @@ position = Vector2(1284, -10)
 rotation = 1.5708
 scale = Vector2(0.640001, 1)
 
-[node name="PlayerUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-script = ExtResource("9_wbtf5")
-shieldIconScene = ExtResource("10_ff4rn")
-
-[node name="LifeText" type="Label" parent="PlayerUI"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 29.0
-offset_right = 126.0
-offset_bottom = 71.0
-text = "Lives:"
-label_settings = SubResource("LabelSettings_0j6qy")
-
-[node name="LifeNumber" type="Label" parent="PlayerUI"]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 29.0
-offset_right = 184.0
-offset_bottom = 71.0
-text = "0"
-label_settings = SubResource("LabelSettings_0j6qy")
-
-[node name="StunnedUI" type="Control" parent="PlayerUI"]
-anchors_preset = 0
-offset_left = 45.0
-offset_top = 76.0
-offset_right = 345.0
-offset_bottom = 121.0
-
-[node name="StunText" type="Label" parent="PlayerUI/StunnedUI"]
-layout_mode = 0
-offset_right = 150.0
-offset_bottom = 42.0
-text = "STUNNED:"
-label_settings = SubResource("LabelSettings_0j6qy")
-
-[node name="ProgressBar" type="ProgressBar" parent="PlayerUI/StunnedUI"]
-layout_mode = 0
-offset_left = 163.0
-offset_top = 7.0
-offset_right = 299.0
-offset_bottom = 39.0
-theme_override_styles/background = SubResource("StyleBoxFlat_anbr5")
-theme_override_styles/fill = SubResource("StyleBoxFlat_xxlm8")
-value = 100.0
-show_percentage = false
-
-[node name="ShieldIconContainer" type="HBoxContainer" parent="PlayerUI"]
-layout_mode = 0
-offset_left = 209.0
-offset_top = 33.0
-offset_right = 258.0
-offset_bottom = 78.0
-
 [node name="Enemy" parent="." instance=ExtResource("11_4nif5")]
 position = Vector2(1134, 340)
 enemyResource = ExtResource("13_66nwt")
@@ -183,6 +183,3 @@ position = Vector2(160, 43)
 position = Vector2(160, 650)
 
 [connection signal="body_entered" from="BallDeleter" to="BallDeleter" method="_on_body_entered"]
-[connection signal="player_finished_stun" from="Player" to="PlayerUI" method="_on_player_finished_stun"]
-[connection signal="player_stunned" from="Player" to="PlayerUI" method="_on_player_stunned"]
-[connection signal="shield_state_changed" from="Player" to="PlayerUI" method="_on_player_shield_state_changed"]

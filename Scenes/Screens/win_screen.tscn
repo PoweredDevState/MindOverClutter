@@ -15,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vl5s7")
 menuSceneFilePath = "res://Scenes/Menus/main_menu.tscn"
-firstLevelFilePath = "res://Scenes/Levels/level_1.tscn"
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0

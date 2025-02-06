@@ -1,7 +1,8 @@
 extends Control
 
 @export var menuSceneFilePath : String
-@export var currentSceneFilePath : String
+var currentSceneFilePath : String
+var firstLevelFilePath : String
 
 #When the scene is created, get the current scene name for the retry button
 #	and pause the game
@@ -15,6 +16,7 @@ extends Control
 func _ready() -> void:
 	currentSceneFilePath = get_tree().current_scene.scene_file_path
 	get_tree().paused = true
+	firstLevelFilePath = GameManager.levelScenePaths[0]
 
 #This is called when the resume button is pressed.
 #This function unpauses the game and deletes this node
@@ -27,7 +29,7 @@ func _on_resume_button_pressed() -> void:
 func _on_retry_button_pressed() -> void:
 	get_tree().paused = false
 	GameManager.reset_game()
-	get_tree().change_scene_to_file(currentSceneFilePath)
+	get_tree().change_scene_to_file(firstLevelFilePath)
 	queue_free()
 
 #This is called when the menu button is pressed.
