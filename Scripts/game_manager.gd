@@ -79,7 +79,7 @@ func win_game() -> void:
 
 func reset_game():
 	currentShields = 0
-	#currentSceneIndex = 0
+	currentSceneIndex = 0
 	ballsOnScreen = 0
 	lives = maxLives
 	
@@ -90,6 +90,9 @@ func start_game():
 	currentSceneIndex = 0
 	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])
 
+func start_game_from_level_select(levelNum : int) -> void:
+	currentSceneIndex = levelNum
+	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])
 
 func next_level() -> void:
 	reset_balls()

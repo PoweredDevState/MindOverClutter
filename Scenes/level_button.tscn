@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmrxno7mkelf1"]
+
+[sub_resource type="Theme" id="Theme_exmtd"]
+default_font_size = 50
+
+[node name="LevelButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_exmtd")
+text = "Level 1"

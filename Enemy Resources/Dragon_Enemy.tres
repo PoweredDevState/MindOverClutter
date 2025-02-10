@@ -8,4 +8,4 @@
 script = ExtResource("1_725fq")
 sprite = ExtResource("3_tq758")
 attackScene = ExtResource("1_e0c8l")
-maxHealth = 5
+maxHealth = 7
