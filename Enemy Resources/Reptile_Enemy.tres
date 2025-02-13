@@ -9,3 +9,4 @@ script = ExtResource("1_olv5h")
 sprite = ExtResource("3_te0j4")
 attackScene = ExtResource("1_ovsn1")
 maxHealth = 3
+spriteScale = 1.0

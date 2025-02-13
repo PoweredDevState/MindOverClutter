@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Enemy Resources/enemy_resource.gd" id="1_725fq"]
 [ext_resource type="PackedScene" uid="uid://sktcfc55oy1h" path="res://Scenes/enemy_attack.tscn" id="1_e0c8l"]
-[ext_resource type="Texture2D" uid="uid://bbgqp05s0n22u" path="res://Assets/Enemy Sprites/Dragon.png" id="3_tq758"]
+[ext_resource type="Texture2D" uid="uid://c4n2wfl0q58gi" path="res://Assets/Enemy Sprites/2-TailBackDragonBlue.png" id="3_2j62c"]
 
 [resource]
 script = ExtResource("1_725fq")
-sprite = ExtResource("3_tq758")
+sprite = ExtResource("3_2j62c")
 attackScene = ExtResource("1_e0c8l")
 maxHealth = 7
+spriteScale = 0.4

@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Enemy Resources/enemy_resource.gd" id="1_dobvp"]
 [ext_resource type="PackedScene" uid="uid://sktcfc55oy1h" path="res://Scenes/enemy_attack.tscn" id="1_t3wn7"]
-[ext_resource type="Texture2D" uid="uid://bwqrmymux67on" path="res://Assets/Enemy Sprites/Snake.png" id="3_1hccf"]
+[ext_resource type="Texture2D" uid="uid://do3hr8fjk4kma" path="res://Assets/Enemy Sprites/flute_snake.png" id="3_702jj"]
 
 [resource]
 script = ExtResource("1_dobvp")
-sprite = ExtResource("3_1hccf")
+sprite = ExtResource("3_702jj")
 attackScene = ExtResource("1_t3wn7")
 maxHealth = 2
+spriteScale = 2.5

@@ -34,6 +34,7 @@ var attackPosition : Vector2
 func _ready() -> void:
 	#For when I will use resources for specific enemy data
 	$EnemySprite.texture = enemyResource.sprite
+	$EnemySprite.scale = Vector2(enemyResource.spriteScale, enemyResource.spriteScale)
 	maxHealth = enemyResource.maxHealth
 	currentHealth = maxHealth
 	change_health_percentage()
