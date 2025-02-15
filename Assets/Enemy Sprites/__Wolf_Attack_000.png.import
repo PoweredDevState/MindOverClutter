@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwqrmymux67on"
-path="res://.godot/imported/Snake.png-59950001d694604708b514904632ca73.ctex"
+uid="uid://byhtq0koawrfe"
+path="res://.godot/imported/__Wolf_Attack_000.png-dc2421d40c61bfd975363b408f7ccf72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemy Sprites/Snake.png"
-dest_files=["res://.godot/imported/Snake.png-59950001d694604708b514904632ca73.ctex"]
+source_file="res://Assets/Enemy Sprites/__Wolf_Attack_000.png"
+dest_files=["res://.godot/imported/__Wolf_Attack_000.png-dc2421d40c61bfd975363b408f7ccf72.ctex"]
 
 [params]
 

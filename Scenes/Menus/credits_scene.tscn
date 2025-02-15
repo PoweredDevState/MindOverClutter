@@ -64,10 +64,11 @@ layout_mode = 2
 text = "This game was made by Jonathan Dervin
 Sprites Used:
 - Player and Ball Sprites made by GrafxKid on OpenGameArt
-- Enemy sprites are from a Zenva Academy course: Build a Micro Turn-Based RPG with Godot 4 by Daniel Buckley
 - Dragon Sprite made by Chibizilla on OpenGameArt
 - Snake Sprite made by j0j0n4th4n on OpenGameArt
-- Attack Sprite made by den_yes on OpenGameArt
+- Wasp Sprite made by Tiamalt on OpenGameArt
+- Wolf Sprite made by Segel on OpenGameArt
+- Attack Animation made by den_yes on OpenGameArt
 - Shield Sprite made by BizmasterStudios on OpenGameArt
 - Paddle, Block, and Attack Indicator Sprites made by me"
 label_settings = SubResource("LabelSettings_mkh6k")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgqp05s0n22u"
-path="res://.godot/imported/Dragon.png-86f0edc4905376cf5f45f611a3dfad3a.ctex"
+uid="uid://cjxetrcwxvhko"
+path="res://.godot/imported/WASP_KING_parts_00000.png-a8f8f240557567b1c2d37d8e4fba1a02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemy Sprites/Dragon.png"
-dest_files=["res://.godot/imported/Dragon.png-86f0edc4905376cf5f45f611a3dfad3a.ctex"]
+source_file="res://Assets/Enemy Sprites/WASP_KING_parts_00000.png"
+dest_files=["res://.godot/imported/WASP_KING_parts_00000.png-a8f8f240557567b1c2d37d8e4fba1a02.ctex"]
 
 [params]
 
