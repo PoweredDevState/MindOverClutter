@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cgaoabqn7ac3i"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_xtgqs"]
+[ext_resource type="AudioStream" uid="uid://bnnkm72l5ipmo" path="res://Assets/Sounds/Enemy Hit.wav" id="2_0g5j7"]
+
+[resource]
+script = ExtResource("1_xtgqs")
+soundType = 5
+sound = ExtResource("2_0g5j7")
+volume = 100.0

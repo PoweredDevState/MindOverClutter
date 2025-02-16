@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqofmaxx38wyr"
+path="res://.godot/imported/Life Lost.wav-66d1f53f3d4520c2c40c3b5fcffe06b6.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Life Lost.wav"
+dest_files=["res://.godot/imported/Life Lost.wav-66d1f53f3d4520c2c40c3b5fcffe06b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

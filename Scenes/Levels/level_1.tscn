@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="9_wbtf5"]
 [ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="10_ff4rn"]
 [ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="11_4nif5"]
-[ext_resource type="Resource" uid="uid://deq1yhpokc65y" path="res://Enemy Resources/Snake_Enemy.tres" id="13_66nwt"]
+[ext_resource type="Resource" uid="uid://deq1yhpokc65y" path="res://Resources/Enemy Resources/Snake_Enemy.tres" id="13_66nwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
 size = Vector2(39, 660)

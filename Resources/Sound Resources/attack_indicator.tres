@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://ckbqqhx6lk14b"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_ru2u7"]
+[ext_resource type="AudioStream" uid="uid://hcudhp4pmt8t" path="res://Assets/Sounds/Attack Indicator.wav" id="2_mhnxs"]
+
+[resource]
+script = ExtResource("1_ru2u7")
+soundType = 1
+sound = ExtResource("2_mhnxs")
+volume = 100.0

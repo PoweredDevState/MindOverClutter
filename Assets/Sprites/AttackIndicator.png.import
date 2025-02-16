@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwifjv0qgdsc"
-path="res://.godot/imported/Paddle.png-6927743cafbeba94f46f1c5e597122c4.ctex"
+uid="uid://d1701jebxahc7"
+path="res://.godot/imported/AttackIndicator.png-fc7f6812438c3922d5902dbda052bfee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Paddle.png"
-dest_files=["res://.godot/imported/Paddle.png-6927743cafbeba94f46f1c5e597122c4.ctex"]
+source_file="res://Assets/Sprites/AttackIndicator.png"
+dest_files=["res://.godot/imported/AttackIndicator.png-fc7f6812438c3922d5902dbda052bfee.ctex"]
 
 [params]
 

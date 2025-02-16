@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjxetrcwxvhko"
-path="res://.godot/imported/WASP_KING_parts_00000.png-a8f8f240557567b1c2d37d8e4fba1a02.ctex"
+uid="uid://c4n2wfl0q58gi"
+path="res://.godot/imported/2-TailBackDragonBlue.png-d258d8c21d553bb3a379578b16b84af0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemy Sprites/WASP_KING_parts_00000.png"
-dest_files=["res://.godot/imported/WASP_KING_parts_00000.png-a8f8f240557567b1c2d37d8e4fba1a02.ctex"]
+source_file="res://Assets/Sprites/Enemy Sprites/2-TailBackDragonBlue.png"
+dest_files=["res://.godot/imported/2-TailBackDragonBlue.png-d258d8c21d553bb3a379578b16b84af0.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://cs3md3a0f4own"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_n4erl"]
+[ext_resource type="AudioStream" uid="uid://bm2i421736ajn" path="res://Assets/Sounds/Block Destroyed.wav" id="2_5rk22"]
+
+[resource]
+script = ExtResource("1_n4erl")
+soundType = 3
+sound = ExtResource("2_5rk22")
+volume = 100.0

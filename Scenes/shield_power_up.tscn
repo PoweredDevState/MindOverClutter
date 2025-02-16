@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqhbj4vomduxb"]
 
 [ext_resource type="Script" path="res://Scripts/shield_power_up.gd" id="1_u4juq"]
-[ext_resource type="Texture2D" uid="uid://do2bkns0gyifh" path="res://Assets/Shield.png" id="1_ywu0k"]
+[ext_resource type="Texture2D" uid="uid://do2bkns0gyifh" path="res://Assets/Sprites/Shield.png" id="1_ywu0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imgeh"]
 size = Vector2(33, 39)

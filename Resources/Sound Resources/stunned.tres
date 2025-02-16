@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://0wke3eyfa8wa"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_30tit"]
+[ext_resource type="AudioStream" uid="uid://h47u2br3c31o" path="res://Assets/Sounds/Stunned.wav" id="2_dc2dl"]
+
+[resource]
+script = ExtResource("1_30tit")
+soundType = 10
+sound = ExtResource("2_dc2dl")
+volume = 100.0

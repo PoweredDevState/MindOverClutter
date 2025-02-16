@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://ct0w1brouaegv"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_1bwow"]
+[ext_resource type="AudioStream" uid="uid://cqcv58tjq7qnk" path="res://Assets/Sounds/Attack Hit.wav" id="2_u5huf"]
+
+[resource]
+script = ExtResource("1_1bwow")
+soundType = 0
+sound = ExtResource("2_u5huf")
+volume = 100.0

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="6_wsx7i"]
 [ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="7_qacxy"]
 [ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="8_ug5g1"]
-[ext_resource type="Resource" uid="uid://bltke1i14s52f" path="res://Enemy Resources/Dragon_Enemy.tres" id="9_eo561"]
+[ext_resource type="Resource" uid="uid://bltke1i14s52f" path="res://Resources/Enemy Resources/Dragon_Enemy.tres" id="9_eo561"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuxqu"]
 size = Vector2(39, 660)

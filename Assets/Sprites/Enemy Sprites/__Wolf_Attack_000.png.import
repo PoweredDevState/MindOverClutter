@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1701jebxahc7"
-path="res://.godot/imported/AttackIndicator.png-36e35289b0f8ef38111a1b610e728019.ctex"
+uid="uid://byhtq0koawrfe"
+path="res://.godot/imported/__Wolf_Attack_000.png-ef8d3f03e2f5aa4e1908cbdaacbac73a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/AttackIndicator.png"
-dest_files=["res://.godot/imported/AttackIndicator.png-36e35289b0f8ef38111a1b610e728019.ctex"]
+source_file="res://Assets/Sprites/Enemy Sprites/__Wolf_Attack_000.png"
+dest_files=["res://.godot/imported/__Wolf_Attack_000.png-ef8d3f03e2f5aa4e1908cbdaacbac73a.ctex"]
 
 [params]
 

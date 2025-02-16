@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brync645b4dvb"
-path="res://.godot/imported/Ball.png-3589007231bc0c6c0868a630a8e57d6e.ctex"
+uid="uid://cjxetrcwxvhko"
+path="res://.godot/imported/WASP_KING_parts_00000.png-8be81e1e27546163ee7bd6d60b29b5f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ball.png"
-dest_files=["res://.godot/imported/Ball.png-3589007231bc0c6c0868a630a8e57d6e.ctex"]
+source_file="res://Assets/Sprites/Enemy Sprites/WASP_KING_parts_00000.png"
+dest_files=["res://.godot/imported/WASP_KING_parts_00000.png-8be81e1e27546163ee7bd6d60b29b5f7.ctex"]
 
 [params]
 

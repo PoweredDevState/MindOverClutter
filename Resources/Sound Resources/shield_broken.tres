@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://bve6bj30ga2ly"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_vhos7"]
+[ext_resource type="AudioStream" uid="uid://vsoule05eqx1" path="res://Assets/Sounds/Shield Broken.wav" id="2_iqw4p"]
+
+[resource]
+script = ExtResource("1_vhos7")
+soundType = 8
+sound = ExtResource("2_iqw4p")
+volume = 100.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4n2wfl0q58gi"
-path="res://.godot/imported/2-TailBackDragonBlue.png-ef8af102343d160c6212aef6677a2d69.ctex"
+uid="uid://dpxvdnhskhxu1"
+path="res://.godot/imported/Character.png-2be146b9792193a479e5eca47ebd32ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemy Sprites/2-TailBackDragonBlue.png"
-dest_files=["res://.godot/imported/2-TailBackDragonBlue.png-ef8af102343d160c6212aef6677a2d69.ctex"]
+source_file="res://Assets/Sprites/Character.png"
+dest_files=["res://.godot/imported/Character.png-2be146b9792193a479e5eca47ebd32ea.ctex"]
 
 [params]
 

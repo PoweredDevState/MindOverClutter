@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://0ax3oirvnv8p"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_yivuf"]
+[ext_resource type="AudioStream" uid="uid://cqofmaxx38wyr" path="res://Assets/Sounds/Life Lost.wav" id="2_0gigu"]
+
+[resource]
+script = ExtResource("1_yivuf")
+soundType = 6
+sound = ExtResource("2_0gigu")
+volume = 100.0
