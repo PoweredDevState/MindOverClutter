@@ -61,9 +61,10 @@ func set_shield(state : bool) -> void:
 	isShielded = state
 	if isShielded == true:
 		numOfShields += 1
+		
 	else:
 		numOfShields -= 1
-		GameManager.add_shield()
+		GameManager.subtract_shield()
 	shield_state_changed.emit(isShielded)
 
 #This function changes the stun state based on the parameter.
