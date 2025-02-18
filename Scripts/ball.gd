@@ -36,16 +36,19 @@ func _physics_process(delta: float) -> void:
 		match collider.collision_layer:
 			#Player and Ball
 			1, 8:
+				SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.BALL_HIT)
 				speed += acceleration
 				#direction = new_direction(collider)
 
 			#Block
 			2:
+				SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.BALL_HIT)
 				speed += acceleration
 				collider.reduce_strength()
 				
 			#Wall
 			4:
+				SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.BALL_HIT)
 				speed += wall_acceleration
 
 			#Enemy

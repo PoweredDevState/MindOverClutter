@@ -19,6 +19,7 @@ func _ready() -> void:
 #This function unpauses the game and goes to the first level scene
 func _on_restart_button_pressed() -> void:
 	get_tree().paused = false
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(firstLevelFilePath)
 	queue_free()
@@ -28,6 +29,7 @@ func _on_restart_button_pressed() -> void:
 #	and changes the current scene to the menu scene
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(menuSceneFilePath)
 	queue_free()

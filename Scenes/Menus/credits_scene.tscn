@@ -62,6 +62,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 text = "This game was made by Jonathan Dervin
+All sounds were made by Jonathan Dervin in Bfxr
 Sprites Used:
 - Player and Ball Sprites made by GrafxKid on OpenGameArt
 - Dragon Sprite made by Chibizilla on OpenGameArt

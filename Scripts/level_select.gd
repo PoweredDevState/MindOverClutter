@@ -19,11 +19,13 @@ func _ready() -> void:
 
 
 func _on_menu_button_pressed() -> void:
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	get_tree().change_scene_to_file(menuFilePath)
 
 
 
 func choose_level(currentButtonDict : Dictionary) -> void:
 	#print(currentButtonDict)
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	var levelNumber = Array(currentButtonDict.keys())[0]
 	GameManager.start_game_from_level_select(levelNumber)

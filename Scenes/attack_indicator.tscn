@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0aw8x4lic3yx"]
+[gd_scene load_steps=3 format=3 uid="uid://d0aw8x4lic3yx"]
 
 [ext_resource type="Texture2D" uid="uid://d1701jebxahc7" path="res://Assets/Sprites/AttackIndicator.png" id="1_4j1q1"]
+[ext_resource type="AudioStream" uid="uid://hcudhp4pmt8t" path="res://Assets/Sounds/Attack Indicator.wav" id="2_bgx1k"]
 
 [node name="AttackIndicator" type="Node2D"]
 
@@ -8,3 +9,7 @@
 z_index = -2
 scale = Vector2(5, 5)
 texture = ExtResource("1_4j1q1")
+
+[node name="IndicatorSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bgx1k")
+autoplay = true

@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		match collider.collision_layer:
 			#Player
 			1:
+				SoundManager.create_sound_at_location(global_position, SoundResource.SOUND_TYPE.SHIELD_UP)
 				collider.set_shield(true)
 				queue_free()
 				GameManager.add_shield()

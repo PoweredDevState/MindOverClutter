@@ -4,6 +4,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.ATTACK_EXPLOSION)
 	animPlayerRef.play("Explosion")
 
 #This function is called when an object collides with this attack

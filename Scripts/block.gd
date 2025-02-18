@@ -25,6 +25,7 @@ func reduce_strength() -> void:
 	
 	if blockStrength == 0:
 		drop_item()
+		SoundManager.create_sound_at_location(global_position, SoundResource.SOUND_TYPE.BLOCK_DESTROYED)
 		queue_free()
 	else:
 		change_block_color()

@@ -34,6 +34,7 @@ func _process(_delta: float) -> void:
 		currentScenePath = get_tree().current_scene.scene_file_path
 		
 		if levelScenePaths.has(currentScenePath):
+			SoundManager.create_pause_immune_sound(SoundResource.SOUND_TYPE.PAUSED)
 			var pauseScreenObj = pauseScreen.instantiate()
 			get_parent().add_child.call_deferred(pauseScreenObj)
 
@@ -47,6 +48,7 @@ func subtract_ball() -> void:
 	ballsOnScreen -= 1
 
 	if ballsOnScreen <= 0:
+		SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.LIFE_LOST)
 		lose_life()
 
 func add_shield() -> void:

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_yivuf")
-soundType = 6
+soundType = 7
 sound = ExtResource("2_0gigu")
-volume = 100.0
+volume = 5.0

@@ -9,6 +9,7 @@ var normalColor : Color
 @export var stunTime := 3
 @onready var spriteRef := $PlayerSprite
 @onready var stunTimerRef := $StunTimer
+@onready var stunSoundPlayerRef := $StunnedSoundPlayer
 
 #signals for the playerUI script
 signal player_stunned
@@ -63,6 +64,7 @@ func set_shield(state : bool) -> void:
 		numOfShields += 1
 		
 	else:
+		SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.SHIELD_BROKEN)
 		numOfShields -= 1
 		GameManager.subtract_shield()
 	shield_state_changed.emit(isShielded)
@@ -87,6 +89,8 @@ func set_stun(state : bool) -> void:
 		set_shield(false)
 	
 	if isStunned == true:
+		#SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.STUNNED)
+		stunSoundPlayerRef.play()
 		_start_timer()
 		
 	
@@ -102,5 +106,6 @@ func _start_timer() -> void:
 
 func _on_stun_timer_timeout() -> void:
 	stunTimerRef.stop()
+	stunSoundPlayerRef.stop()
 	set_stun(false)
 	player_finished_stun.emit()

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://iooppfa3yjun"]
+
+[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_i2xvw"]
+[ext_resource type="AudioStream" uid="uid://h3t5mtgcgjj7" path="res://Assets/Sounds/Enemy Death.wav" id="2_sw44g"]
+
+[resource]
+script = ExtResource("1_i2xvw")
+soundType = 12
+sound = ExtResource("2_sw44g")
+volume = 5.0

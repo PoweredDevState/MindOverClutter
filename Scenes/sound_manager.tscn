@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1km0dya8tad5"]
+[gd_scene load_steps=15 format=3 uid="uid://d1km0dya8tad5"]
 
 [ext_resource type="Script" path="res://Scripts/sound_manager.gd" id="1_i1v65"]
 [ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="2_trd3x"]
 [ext_resource type="Resource" uid="uid://ct0w1brouaegv" path="res://Resources/Sound Resources/attack_hit.tres" id="3_3prgj"]
-[ext_resource type="Resource" uid="uid://ckbqqhx6lk14b" path="res://Resources/Sound Resources/attack_indicator.tres" id="4_kf307"]
 [ext_resource type="Resource" uid="uid://8xri0jlj2lv7" path="res://Resources/Sound Resources/ball_hit.tres" id="5_vgr7y"]
 [ext_resource type="Resource" uid="uid://cs3md3a0f4own" path="res://Resources/Sound Resources/block_destroyed.tres" id="6_hb3mq"]
 [ext_resource type="Resource" uid="uid://51mie74n73v6" path="res://Resources/Sound Resources/button_press.tres" id="7_jwact"]
@@ -13,7 +12,9 @@
 [ext_resource type="Resource" uid="uid://bve6bj30ga2ly" path="res://Resources/Sound Resources/shield_broken.tres" id="11_bx0bl"]
 [ext_resource type="Resource" uid="uid://8g1nny7g2ywa" path="res://Resources/Sound Resources/shield_up.tres" id="12_584tv"]
 [ext_resource type="Resource" uid="uid://0wke3eyfa8wa" path="res://Resources/Sound Resources/stunned.tres" id="13_41hdc"]
+[ext_resource type="Resource" uid="uid://s3xnfkfk8ot5" path="res://Resources/Sound Resources/attack_explosion.tres" id="13_odl4f"]
+[ext_resource type="Resource" uid="uid://iooppfa3yjun" path="res://Resources/Sound Resources/enemy_death.tres" id="14_6aoxt"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_i1v65")
-soundEffects = Array[ExtResource("2_trd3x")]([ExtResource("3_3prgj"), ExtResource("4_kf307"), ExtResource("5_vgr7y"), ExtResource("6_hb3mq"), ExtResource("7_jwact"), ExtResource("8_rl2d2"), ExtResource("9_gyfk7"), ExtResource("10_vcu2p"), ExtResource("11_bx0bl"), ExtResource("12_584tv"), ExtResource("13_41hdc")])
+soundEffects = Array[ExtResource("2_trd3x")]([ExtResource("3_3prgj"), ExtResource("5_vgr7y"), ExtResource("6_hb3mq"), ExtResource("7_jwact"), ExtResource("8_rl2d2"), ExtResource("9_gyfk7"), ExtResource("10_vcu2p"), ExtResource("11_bx0bl"), ExtResource("12_584tv"), ExtResource("13_41hdc"), ExtResource("13_odl4f"), ExtResource("14_6aoxt")])
