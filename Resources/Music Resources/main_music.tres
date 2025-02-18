@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://bqsl7rfqbcylx"]
+
+[ext_resource type="AudioStream" uid="uid://cuo1lynae3wbw" path="res://Assets/Music/That Zen Moment.mp3" id="1_cov4b"]
+[ext_resource type="Script" path="res://Resources/Music Resources/music_resource.gd" id="2_llhqv"]
+
+[resource]
+script = ExtResource("2_llhqv")
+musicType = 1
+music = ExtResource("1_cov4b")
+volume = 5.0

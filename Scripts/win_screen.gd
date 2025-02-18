@@ -20,6 +20,7 @@ func _ready() -> void:
 func _on_restart_button_pressed() -> void:
 	get_tree().paused = false
 	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
+	MusicManager.change_music(MusicResource.MUSIC_TYPE.MAIN_MUSIC)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(firstLevelFilePath)
 	queue_free()
@@ -30,6 +31,7 @@ func _on_restart_button_pressed() -> void:
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
 	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
+	MusicManager.change_music(MusicResource.MUSIC_TYPE.MENU_MUSIC)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(menuSceneFilePath)
 	queue_free()

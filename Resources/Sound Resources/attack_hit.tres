@@ -8,3 +8,4 @@ script = ExtResource("1_1bwow")
 soundType = 0
 sound = ExtResource("2_u5huf")
 volume = 50.0
+limit = 5

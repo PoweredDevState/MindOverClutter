@@ -71,7 +71,18 @@ Sprites Used:
 - Wolf Sprite made by Segel on OpenGameArt
 - Attack Animation made by den_yes on OpenGameArt
 - Shield Sprite made by BizmasterStudios on OpenGameArt
-- Paddle, Block, and Attack Indicator Sprites made by me"
+- Paddle, Block, and Attack Indicator Sprites made by Jonathan Dervin
+All music was obtained from incompetech.com
+Music Used:
+- \"Clash Defiant\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+- \"Mesmerizing Galaxy \" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+- \"That Zen Moment \" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/"
 label_settings = SubResource("LabelSettings_mkh6k")
 autowrap_mode = 2
 

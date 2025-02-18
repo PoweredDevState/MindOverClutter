@@ -26,6 +26,7 @@ func _ready() -> void:
 	LevelFinishedTimerRef.wait_time = levelFinishedTimerTime
 	LevelFinishedUIRef.visible = false
 	lives = maxLives
+	
 
 
 #When the player presses the pause button, spawn the pause screen 
@@ -60,6 +61,9 @@ func subtract_shield() -> void:
 func lose_life() -> void:
 	lives -= 1
 	
+	if lives == 0:
+		MusicManager.change_music(MusicResource.MUSIC_TYPE.PINCH_MUSIC)
+	
 	if lives < 0:
 		#print("Lose")
 		var loseScreenObj = loseScreen.instantiate()
@@ -91,10 +95,12 @@ func reset_balls():
 func start_game():
 	currentSceneIndex = 0
 	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])
+	MusicManager.change_music(MusicResource.MUSIC_TYPE.MAIN_MUSIC)
 
 func start_game_from_level_select(levelNum : int) -> void:
 	currentSceneIndex = levelNum
 	get_tree().change_scene_to_file(levelScenePaths[currentSceneIndex])
+	MusicManager.change_music(MusicResource.MUSIC_TYPE.MAIN_MUSIC)
 
 func next_level() -> void:
 	reset_balls()

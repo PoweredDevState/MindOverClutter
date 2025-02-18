@@ -4,7 +4,24 @@ extends Control
 @export var creditsFilePath : String
 @export var levelSelectFilePath : String
 
-#@export var startGameScene : PackedScene
+'''Scene Switcher Idea
+This is for when I want to make a scene manager node
+The idea is to make each scene that I want to switch into a resource.
+The class will contain a list of enums for the scene names.
+Each resource will have an exported enum var for the scene name, 
+an exported packedScene for the scene itself, 
+and a non-exported variable for the filepath.
+In the ready function of the SceneSwitcher, 
+it will initialize a dictionary of scenes to load from an array 
+of all of the sceneResources. 
+Then, it will initialize the scenePath variable in each resource 
+using the resource_path of the PackedScene
+
+
+@export var startGameScene : PackedScene
+func _ready() -> void:
+	print(startGameScene.resource_path)
+'''
 
 
 #This is called when the start button is pressed.
