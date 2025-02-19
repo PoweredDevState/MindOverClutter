@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tri5q")
 creditsFilePath = "res://Scenes/Menus/credits_scene.tscn"
+instructionsFilePath = "res://Scenes/Menus/instructions_scene.tscn"
 levelSelectFilePath = "res://Scenes/Menus/level_select.tscn"
 
 [node name="Background" type="ColorRect" parent="."]
@@ -35,31 +36,41 @@ vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 474.0
-offset_right = 352.0
-offset_bottom = 589.0
+offset_left = 46.0
+offset_top = 500.0
+offset_right = 298.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 45
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 510.0
-offset_top = 474.0
-offset_right = 762.0
-offset_bottom = 589.0
+offset_left = 340.0
+offset_top = 500.0
+offset_right = 592.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 45
 text = "Credits"
 
+[node name="InstructionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 653.7
+offset_top = 500.0
+offset_right = 921.7
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 40
+text = "Instructions"
+
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 920.0
-offset_top = 474.0
-offset_right = 1172.0
-offset_bottom = 589.0
+offset_left = 976.0
+offset_top = 500.0
+offset_right = 1228.0
+offset_bottom = 615.0
 theme_override_font_sizes/font_size = 45
 text = "Exit"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

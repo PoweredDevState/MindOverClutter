@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4cvfd3gklfts"]
 
-[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_vl5s7"]
+[ext_resource type="Script" path="res://Scripts/results_screen.gd" id="1_40jej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iehe6"]
 font_size = 100
 
-[node name="WinScreen" type="Control"]
+[node name="WinScreen" type="Control" node_paths=PackedStringArray("startOverButton", "menuButton")]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -13,8 +13,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vl5s7")
+script = ExtResource("1_40jej")
 menuSceneFilePath = "res://Scenes/Menus/main_menu.tscn"
+startOverButton = NodePath("RestartButton")
+menuButton = NodePath("MenuButton")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -50,6 +52,3 @@ offset_right = 1010.0
 offset_bottom = 589.0
 theme_override_font_sizes/font_size = 45
 text = "Menu"
-
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://clvrde8jqq25h"]
 
-[ext_resource type="Script" path="res://Scripts/lose_screen.gd" id="1_k4qlf"]
+[ext_resource type="Script" path="res://Scripts/results_screen.gd" id="1_k4qlf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iehe6"]
 font_size = 100
 
-[node name="LoseScreen" type="Control"]
+[node name="LoseScreen" type="Control" node_paths=PackedStringArray("startOverButton", "menuButton")]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -15,6 +15,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k4qlf")
 menuSceneFilePath = "res://Scenes/Menus/main_menu.tscn"
+startOverButton = NodePath("RetryButton")
+menuButton = NodePath("MenuButton")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -50,6 +52,3 @@ offset_right = 1010.0
 offset_bottom = 589.0
 theme_override_font_sizes/font_size = 45
 text = "Menu"
-
-[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

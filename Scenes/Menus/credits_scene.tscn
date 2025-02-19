@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0v2vjcfd7700"]
 
-[ext_resource type="Script" path="res://Scripts/credits_scene.gd" id="1_mxocw"]
+[ext_resource type="Script" path="res://Scripts/other_menu_scene.gd" id="1_mxocw"]
 [ext_resource type="PackedScene" uid="uid://16wowo6lktx2" path="res://Scenes/Menus/main_menu.tscn" id="2_pv4oh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nddws"]
@@ -9,7 +9,7 @@ font_size = 75
 [sub_resource type="LabelSettings" id="LabelSettings_mkh6k"]
 font_size = 30
 
-[node name="CreditsScene" type="Control"]
+[node name="CreditsScene" type="Control" node_paths=PackedStringArray("menuButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_mxocw")
 menuFilePath = "res://Scenes/Menus/main_menu.tscn"
 menuScene = ExtResource("2_pv4oh")
+menuButton = NodePath("MenuButton")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -94,5 +95,3 @@ offset_right = 758.0
 offset_bottom = 653.0
 theme_override_font_sizes/font_size = 45
 text = "Menu"
-
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

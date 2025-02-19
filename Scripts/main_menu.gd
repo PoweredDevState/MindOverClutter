@@ -2,6 +2,7 @@ extends Control
 
 #@export var startGameFilePath : String
 @export var creditsFilePath : String
+@export var instructionsFilePath : String
 @export var levelSelectFilePath : String
 
 '''Scene Switcher Idea
@@ -51,3 +52,9 @@ func _on_exit_button_pressed() -> void:
 	#SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	
 	get_tree().quit()
+
+
+func _on_instructions_button_pressed() -> void:
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
+	
+	get_tree().change_scene_to_file(instructionsFilePath)

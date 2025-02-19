@@ -1,8 +1,9 @@
 extends Control
 
 @export var menuSceneFilePath : String
-var currentSceneFilePath : String
 var firstLevelFilePath : String
+@export var startOverButton : Button
+@export var menuButton : Button
 
 #When the scene is created, get the current scene name for the retry button
 #	and pause the game
@@ -14,13 +15,14 @@ var firstLevelFilePath : String
 #	this means that the player can interact with this node 
 #	and the buttons in this node.
 func _ready() -> void:
-	currentSceneFilePath = get_tree().current_scene.scene_file_path
 	get_tree().paused = true
 	firstLevelFilePath = GameManager.levelScenePaths[0]
+	startOverButton.pressed.connect(_on_start_over_button_pressed)
+	menuButton.pressed.connect(_on_menu_button_pressed)
 
 #This is called when the retry button is pressed.
 #This function unpauses the game and reloads the current scene
-func _on_retry_button_pressed() -> void:
+func _on_start_over_button_pressed() -> void:
 	get_tree().paused = false
 	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
 	MusicManager.change_music(MusicResource.MUSIC_TYPE.MAIN_MUSIC)
