@@ -6,6 +6,8 @@ extends Node2D
 
 #This calls the function to spawn the first ball
 func _ready() -> void:
+	#This connects the GameManager zero balls signal 
+	#to the zero balls function in the spawner script
 	GameManager.zero_balls_on_screen.connect(_on_game_manager_zero_balls_on_screen)
 	
 	spawn_ball()

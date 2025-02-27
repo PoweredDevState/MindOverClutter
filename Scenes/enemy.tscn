@@ -39,7 +39,7 @@ offset_right = 97.0
 offset_bottom = 76.0
 script = ExtResource("3_5lt8s")
 
-[node name="ProgressBar" type="ProgressBar" parent="EnemyUI"]
+[node name="HealthBar" type="ProgressBar" parent="EnemyUI"]
 layout_mode = 0
 offset_top = 20.0
 offset_right = 185.0

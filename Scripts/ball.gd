@@ -1,8 +1,10 @@
 extends CharacterBody2D
+#class_name Ball
 
 @export var speed := 400.0
 @export var acceleration := 20.0
 @export var wall_acceleration := 5.0
+
 
 var direction : Vector2
 
