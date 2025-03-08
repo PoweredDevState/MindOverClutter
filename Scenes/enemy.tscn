@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c71me4vbd2lju"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_le81n"]
+[ext_resource type="Script" uid="uid://dfdpajep2fpti" path="res://Scripts/enemy.gd" id="1_le81n"]
 [ext_resource type="PackedScene" uid="uid://d0aw8x4lic3yx" path="res://Scenes/attack_indicator.tscn" id="2_ae8q2"]
-[ext_resource type="Script" path="res://Scripts/enemy_ui.gd" id="3_5lt8s"]
+[ext_resource type="Script" uid="uid://c8j2my2rgsc61" path="res://Scripts/enemy_ui.gd" id="3_5lt8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ecoh"]
 size = Vector2(148, 131)

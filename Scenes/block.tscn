@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyl4too4a36xg"]
 
 [ext_resource type="Texture2D" uid="uid://dtl200cl4yp8u" path="res://Assets/Sprites/Block.png" id="1_l4wwa"]
-[ext_resource type="Script" path="res://Scripts/block.gd" id="1_r7y81"]
+[ext_resource type="Script" uid="uid://4jnv5yopmr86" path="res://Scripts/block.gd" id="1_r7y81"]
 [ext_resource type="PackedScene" uid="uid://cqhbj4vomduxb" path="res://Scenes/shield_power_up.tscn" id="2_uiri3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5rfp"]

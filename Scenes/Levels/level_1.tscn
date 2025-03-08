@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dov7ysq5n1piu"]
 
 [ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="4_7h1ft"]
-[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="5_g0cp4"]
+[ext_resource type="Script" uid="uid://benwxatchu2fw" path="res://Scripts/ball_deleter.gd" id="5_g0cp4"]
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="6_20xd0"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="7_1rcx7"]
 [ext_resource type="PackedScene" uid="uid://0yu2fk7k4osc" path="res://Scenes/static_border_2d.tscn" id="8_u6dy3"]
-[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="9_wbtf5"]
+[ext_resource type="Script" uid="uid://okgmmw3ykqh5" path="res://Scripts/player_ui.gd" id="9_wbtf5"]
 [ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="10_ff4rn"]
 [ext_resource type="PackedScene" uid="uid://c71me4vbd2lju" path="res://Scenes/enemy.tscn" id="11_4nif5"]
 [ext_resource type="Resource" uid="uid://deq1yhpokc65y" path="res://Resources/Enemy Resources/Snake_Enemy.tres" id="13_66nwt"]

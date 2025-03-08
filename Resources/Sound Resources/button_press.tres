@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://51mie74n73v6"]
 
-[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_8ruat"]
+[ext_resource type="Script" uid="uid://dfciw8ni647vd" path="res://Resources/Sound Resources/sound_resource.gd" id="1_8ruat"]
 [ext_resource type="AudioStream" uid="uid://cf6dkosvh2mom" path="res://Assets/Sounds/Button Press.wav" id="2_jpmla"]
 
 [resource]
@@ -8,3 +8,4 @@ script = ExtResource("1_8ruat")
 soundType = 5
 sound = ExtResource("2_jpmla")
 volume = 10.0
+limit = 5

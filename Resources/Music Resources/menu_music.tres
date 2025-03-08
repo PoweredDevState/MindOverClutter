@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://bsn88w15v4wul"]
 
 [ext_resource type="AudioStream" uid="uid://dxdp332baxfkq" path="res://Assets/Music/Mesmerizing Galaxy Loop.mp3" id="1_4jbuv"]
-[ext_resource type="Script" path="res://Resources/Music Resources/music_resource.gd" id="1_fhn16"]
+[ext_resource type="Script" uid="uid://bigkf5lrloxx8" path="res://Resources/Music Resources/music_resource.gd" id="1_fhn16"]
 
 [resource]
 script = ExtResource("1_fhn16")

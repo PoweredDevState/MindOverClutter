@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy7go5k660x18"]
 
-[ext_resource type="Script" path="res://Scripts/other_menu_scene.gd" id="1_nceak"]
+[ext_resource type="Script" uid="uid://cdia3mu5qc41l" path="res://Scripts/other_menu_scene.gd" id="1_nceak"]
 [ext_resource type="PackedScene" uid="uid://16wowo6lktx2" path="res://Scenes/Menus/main_menu.tscn" id="2_2882g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nddws"]

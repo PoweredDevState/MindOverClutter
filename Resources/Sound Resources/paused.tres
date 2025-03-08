@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://dutdbvroyhg57"]
 
-[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_ssegr"]
+[ext_resource type="Script" uid="uid://dfciw8ni647vd" path="res://Resources/Sound Resources/sound_resource.gd" id="1_ssegr"]
 [ext_resource type="AudioStream" uid="uid://cxrym6rpuyh4r" path="res://Assets/Sounds/Paused.wav" id="2_b7674"]
 
 [resource]
@@ -8,3 +8,4 @@ script = ExtResource("1_ssegr")
 soundType = 8
 sound = ExtResource("2_b7674")
 volume = 0.0
+limit = 5

@@ -3,7 +3,7 @@ extends Node2D
 
 @export var soundEffects: Array[SoundResource]
 
-var soundDict : Dictionary = {}
+var soundDict : Dictionary[SoundResource.SOUND_TYPE, SoundResource] = {}
 
 #When this node is instaniated, 
 #this initializes the sound dictionary based on the soundEffects array.

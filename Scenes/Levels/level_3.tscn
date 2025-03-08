@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://p4auok2c7p82"]
 
 [ext_resource type="PackedScene" uid="uid://cg685sdnkomnv" path="res://Scenes/ball_spawner.tscn" id="1_aea7o"]
-[ext_resource type="Script" path="res://Scripts/ball_deleter.gd" id="2_wjxt5"]
-[ext_resource type="Script" path="res://Scripts/player_ui.gd" id="3_sgrae"]
+[ext_resource type="Script" uid="uid://benwxatchu2fw" path="res://Scripts/ball_deleter.gd" id="2_wjxt5"]
+[ext_resource type="Script" uid="uid://okgmmw3ykqh5" path="res://Scripts/player_ui.gd" id="3_sgrae"]
 [ext_resource type="PackedScene" uid="uid://brjab31847bob" path="res://Scenes/shield_icon.tscn" id="4_vx4ca"]
 [ext_resource type="PackedScene" uid="uid://cntjt1pdekdqo" path="res://Scenes/player.tscn" id="5_l2vjv"]
 [ext_resource type="PackedScene" uid="uid://dyl4too4a36xg" path="res://Scenes/block.tscn" id="6_bhkjc"]

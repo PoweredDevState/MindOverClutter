@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://8xri0jlj2lv7"]
 
-[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_85ko8"]
+[ext_resource type="Script" uid="uid://dfciw8ni647vd" path="res://Resources/Sound Resources/sound_resource.gd" id="1_85ko8"]
 [ext_resource type="AudioStream" uid="uid://b10tprtflapkr" path="res://Assets/Sounds/Ball Hit.wav" id="2_6rc1h"]
 
 [resource]
@@ -8,3 +8,4 @@ script = ExtResource("1_85ko8")
 soundType = 3
 sound = ExtResource("2_6rc1h")
 volume = 10.0
+limit = 5

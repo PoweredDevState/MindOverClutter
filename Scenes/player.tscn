@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cntjt1pdekdqo"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ywibl"]
+[ext_resource type="Script" uid="uid://bdelfgu2fqhui" path="res://Scripts/player.gd" id="1_ywibl"]
 [ext_resource type="Texture2D" uid="uid://dpxvdnhskhxu1" path="res://Assets/Sprites/Character.png" id="2_g0pvq"]
 [ext_resource type="Texture2D" uid="uid://bcwifjv0qgdsc" path="res://Assets/Sprites/Paddle.png" id="3_63wn7"]
 [ext_resource type="AudioStream" uid="uid://h47u2br3c31o" path="res://Assets/Sounds/Stunned.wav" id="4_1548f"]

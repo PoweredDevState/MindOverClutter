@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg685sdnkomnv"]
 
-[ext_resource type="Script" path="res://Scripts/ball_spawner.gd" id="1_d7157"]
+[ext_resource type="Script" uid="uid://c8wrmqpa3qkl6" path="res://Scripts/ball_spawner.gd" id="1_d7157"]
 [ext_resource type="PackedScene" uid="uid://bxf3ckdox1opi" path="res://Scenes/ball.tscn" id="2_id3q1"]
 
 [node name="BallSpawner" type="Node2D"]

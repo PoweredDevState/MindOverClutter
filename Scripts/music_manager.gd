@@ -4,7 +4,7 @@ extends Node2D
 @export var musicResources: Array[MusicResource]
 @onready var musicPlayerRef := $MusicPlayer
 
-var musicDict : Dictionary = {}
+var musicDict : Dictionary[MusicResource.MUSIC_TYPE, MusicResource] = {}
 
 #When this node is instaniated, 
 #this initializes the music dictionary based on the musicResources array.

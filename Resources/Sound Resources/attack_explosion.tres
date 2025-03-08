@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SoundResource" load_steps=3 format=3 uid="uid://s3xnfkfk8ot5"]
 
-[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="1_i6y12"]
+[ext_resource type="Script" uid="uid://dfciw8ni647vd" path="res://Resources/Sound Resources/sound_resource.gd" id="1_i6y12"]
 [ext_resource type="AudioStream" uid="uid://dpujx12ljxyeh" path="res://Assets/Sounds/Attack Explosion.wav" id="2_vi3eq"]
 
 [resource]
@@ -8,3 +8,4 @@ script = ExtResource("1_i6y12")
 soundType = 2
 sound = ExtResource("2_vi3eq")
 volume = 0.0
+limit = 5

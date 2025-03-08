@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://sktcfc55oy1h"]
 
 [ext_resource type="SpriteFrames" uid="uid://df6o2om1tliwt" path="res://Animations/explosion_anim.tres" id="1_j88to"]
-[ext_resource type="Script" path="res://Scripts/enemy_attack.gd" id="1_m1sda"]
+[ext_resource type="Script" uid="uid://dfifh8cd13siw" path="res://Scripts/enemy_attack.gd" id="1_m1sda"]
 
 [sub_resource type="Animation" id="Animation_8ghnb"]
 resource_name = "Explosion"
@@ -48,8 +48,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u7jrp"]
 _data = {
-"Explosion": SubResource("Animation_8ghnb"),
-"RESET": SubResource("Animation_c4lhf")
+&"Explosion": SubResource("Animation_8ghnb"),
+&"RESET": SubResource("Animation_c4lhf")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5vs"]

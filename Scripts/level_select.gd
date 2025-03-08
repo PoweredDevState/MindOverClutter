@@ -6,7 +6,7 @@ extends Control
 @onready var boxContainerRef := $ScrollContainer/BoxContainer
 @export var levelButtonScene : PackedScene
 
-var levelButtonsDict : Dictionary = {}
+var levelButtonsDict : Dictionary[int, Button] = {}
 
 #When this node is instaniated, 
 #this creates buttons based on the number of levels 
@@ -15,7 +15,7 @@ var levelButtonsDict : Dictionary = {}
 #and also binds the level number to the choose_level function as a parameter
 func _ready() -> void:
 	for num in GameManager.levelScenePaths.size():
-		var buttonObj = levelButtonScene.instantiate()
+		var buttonObj : Button = levelButtonScene.instantiate()
 		boxContainerRef.add_child.call_deferred(buttonObj)
 		buttonObj.text = "Level " + str(num + 1)
 		

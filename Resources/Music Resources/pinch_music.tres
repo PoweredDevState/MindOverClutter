@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicResource" load_steps=3 format=3 uid="uid://bu3p4sb3gulba"]
 
 [ext_resource type="AudioStream" uid="uid://bo320eoegy3t3" path="res://Assets/Music/Clash Defiant.mp3" id="1_0fdsh"]
-[ext_resource type="Script" path="res://Resources/Music Resources/music_resource.gd" id="1_38quj"]
+[ext_resource type="Script" uid="uid://bigkf5lrloxx8" path="res://Resources/Music Resources/music_resource.gd" id="1_38quj"]
 
 [resource]
 script = ExtResource("1_38quj")

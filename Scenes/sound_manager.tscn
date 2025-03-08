@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d1km0dya8tad5"]
 
-[ext_resource type="Script" path="res://Scripts/sound_manager.gd" id="1_i1v65"]
-[ext_resource type="Script" path="res://Resources/Sound Resources/sound_resource.gd" id="2_trd3x"]
+[ext_resource type="Script" uid="uid://d1rpbmkpc0uk1" path="res://Scripts/sound_manager.gd" id="1_i1v65"]
+[ext_resource type="Script" uid="uid://dfciw8ni647vd" path="res://Resources/Sound Resources/sound_resource.gd" id="2_trd3x"]
 [ext_resource type="Resource" uid="uid://ct0w1brouaegv" path="res://Resources/Sound Resources/attack_hit.tres" id="3_3prgj"]
 [ext_resource type="Resource" uid="uid://8xri0jlj2lv7" path="res://Resources/Sound Resources/ball_hit.tres" id="5_vgr7y"]
 [ext_resource type="Resource" uid="uid://cs3md3a0f4own" path="res://Resources/Sound Resources/block_destroyed.tres" id="6_hb3mq"]
