@@ -24,7 +24,7 @@ func _ready() -> void:
 #This function unpauses the game and reloads the current scene
 func _on_start_over_button_pressed() -> void:
 	get_tree().paused = false
-	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS, true)
 	MusicManager.change_music(MusicResource.MUSIC_TYPE.MAIN_MUSIC)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(firstLevelFilePath)
@@ -35,7 +35,7 @@ func _on_start_over_button_pressed() -> void:
 #	and changes the current scene to the menu scene
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
-	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS)
+	SoundManager.create_sound(SoundResource.SOUND_TYPE.BUTTON_PRESS, true)
 	MusicManager.change_music(MusicResource.MUSIC_TYPE.MENU_MUSIC)
 	GameManager.reset_game()
 	get_tree().change_scene_to_file(menuSceneFilePath)

@@ -2,7 +2,7 @@ extends Control
 
 @onready var timerRef := $LevelFinishedTimer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#When the level is finished, set the timer text to the time left on the timer
 func _process(_delta: float) -> void:
 	if GameManager.isLevelFinished == true:
 		var time_left = int(timerRef.time_left)

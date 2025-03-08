@@ -20,6 +20,10 @@ var isShielded := false
 var numOfShields := 0
 signal shield_state_changed
 
+#When the player script in initialized,
+#set the initial values 
+#if the GameManager script has shields,
+#set those shield values.
 func _ready() -> void:
 	normalColor = spriteRef.self_modulate
 	stunTimerRef.wait_time = stunTime
@@ -46,7 +50,6 @@ func _physics_process(delta: float) -> void:
 		print(velocity)
 	'''
 	
-	#move_and_slide()
 	if isStunned == false:
 		move_and_collide(velocity * delta)
 
@@ -55,7 +58,7 @@ func _physics_process(delta: float) -> void:
 #This function takes in a boolean 
 #	indicating that the player either got a shield or took damage.
 #If the boolean is true, increase the number of shields by 1.
-#Else, decrease the number of shields by 1.
+#Else, call the GameManager script to decrease the number of shields by 1.
 #This also emits a signal to the playerUI script 
 #	to change how many shields are shown to the player
 func set_shield(state : bool) -> void:
@@ -64,14 +67,14 @@ func set_shield(state : bool) -> void:
 		numOfShields += 1
 		
 	else:
-		SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.SHIELD_BROKEN)
+		SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.SHIELD_BROKEN, true)
 		numOfShields -= 1
 		GameManager.subtract_shield()
 	shield_state_changed.emit(isShielded)
 
 #This function changes the stun state based on the parameter.
 #If the player has the shield power-up, the player is not stunned,
-#but the shield power-up is disabled
+#but a shield is taken away from the player
 func set_stun(state : bool) -> void:
 	if numOfShields == 0:
 		isStunned = state
@@ -89,21 +92,25 @@ func set_stun(state : bool) -> void:
 		set_shield(false)
 	
 	if isStunned == true:
-		#SoundManager.create_sound_at_location(global_position,SoundResource.SOUND_TYPE.STUNNED)
 		stunSoundPlayerRef.play()
-		_start_timer()
-		
-	
+		_start_stun_timer()
+
+
 func _set_sprite_color() -> void:
 	if isStunned == true:
 		spriteRef.self_modulate = stunColor
 	else:
 		spriteRef.self_modulate = normalColor
 
-func _start_timer() -> void:
+#This function starts the stun timer 
+#and emits the player_stunned signal for the playerUI script
+func _start_stun_timer() -> void:
 	stunTimerRef.start()
 	player_stunned.emit()
 
+#This function is called when the timeout signal is emitted from the timer.
+#This stops the timer and calls the set_stun function with the false argument.
+#It also emits the player_finished_stun signal for the playerUI script
 func _on_stun_timer_timeout() -> void:
 	stunTimerRef.stop()
 	stunSoundPlayerRef.stop()

@@ -86,10 +86,10 @@ func reduce_health() -> void:
 	
 	#Depending on the health, it plays a different sound
 	if currentHealth == 0:
-		SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.ENEMY_DEATH)
+		SoundManager.create_sound_at_location(global_position, SoundResource.SOUND_TYPE.ENEMY_DEATH, false)
 		queue_free()
 	else:
-		SoundManager.create_pause_immune_sound_at_location(global_position, SoundResource.SOUND_TYPE.ENEMY_HIT)
+		SoundManager.create_sound_at_location(global_position, SoundResource.SOUND_TYPE.ENEMY_HIT, false)
 
 #this function creates a health percentage out of 100 for the enemy UI.
 #this also emits a signal to the enemy UI to change its progress bar

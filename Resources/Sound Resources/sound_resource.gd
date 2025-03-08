@@ -8,7 +8,6 @@ class_name SoundResource
 #SoundResource script based on Aarimous' AudioManager project
 #Video Link: https://www.youtube.com/watch?v=Egf2jgET3nQ&list=PLPa54potuqXIjxpqrhlXBvJYa7Vu2p_x_&index=5 
 #GitHub Link: https://github.com/Aarimous/AudioManager
-
 enum SOUND_TYPE {
 	ATTACK_HIT,
 	ATTACK_INDICATOR,
