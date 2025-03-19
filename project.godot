@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Scenes/game_manager.tscn"
-SoundManager="*res://Scenes/sound_manager.tscn"
-MusicManager="*res://Scenes/music_manager.tscn"
+GameManager="*res://Scenes/Managers/game_manager.tscn"
+SoundManager="*res://Scenes/Managers/sound_manager.tscn"
+MusicManager="*res://Scenes/Managers/music_manager.tscn"
 
 [display]
 

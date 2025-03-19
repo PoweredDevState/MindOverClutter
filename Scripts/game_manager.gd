@@ -135,7 +135,7 @@ func level_finished() -> void:
 	isLevelFinished = true
 	LevelFinishedTimerRef.start()
 
-#This is a function called 
+#This is a receiver function called 
 #when the timeout signal in the LevelFinishedTimer is emitted.
 #Once the timer is done, unpause the game and call the next_level function
 func _on_level_finished_timer_timeout() -> void:

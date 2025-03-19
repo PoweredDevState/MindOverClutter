@@ -1,10 +1,8 @@
 extends CharacterBody2D
-#class_name Ball
 
 @export var speed := 400.0
 @export var acceleration := 20.0
 @export var wall_acceleration := 5.0
-
 
 var direction : Vector2
 
@@ -67,4 +65,3 @@ func _physics_process(delta: float) -> void:
 func random_starting_direction() -> Vector2:
 	var newDir := Vector2(-1, randf_range(-0.9, 0.9))
 	return newDir.normalized()
-	

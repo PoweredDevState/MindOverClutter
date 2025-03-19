@@ -21,8 +21,8 @@ var numOfShields := 0
 signal shield_state_changed
 
 #When the player script in initialized,
-#set the initial values 
-#if the GameManager script has shields,
+#set the initial values.
+#If the GameManager script has shields,
 #set those shield values.
 func _ready() -> void:
 	normalColor = spriteRef.self_modulate
