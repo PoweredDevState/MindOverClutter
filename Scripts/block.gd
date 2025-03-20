@@ -3,11 +3,12 @@ extends StaticBody2D
 var blockStrength : int
 var blockColor : Color
 var randomItemNumber : int
+@onready var spriteRef := $Sprite2D
 
+#Spawnable Items
 @export var shieldPowerUpScene : PackedScene
 var shieldPowerUp : Object
 
-@onready var spriteRef := $Sprite2D
 
 func _init() -> void:
 	randomize_block_strength()
@@ -43,11 +44,15 @@ func change_block_color() -> void:
 		
 	spriteRef.self_modulate = blockColor
 
-
+#This function chooses a random number 
+#between 2 numbers and sets it to the block strength
 func randomize_block_strength() -> void:
 	blockStrength = randi_range(1, 4)
 
-
+#This function chooses a random number between 2 numbers 
+#and checks whether it hits a number 
+#in either two specific ranges of numbers. 
+#Depending on the range it hits, spawn a shield or an extra ball.
 func drop_item() -> void:
 	randomItemNumber = randi_range(0, 10)
 	
@@ -59,7 +64,7 @@ func drop_item() -> void:
 		spawn_shield()
 
 #This function creates the shield object 
-#	and spawns it in the same global position as the block it spawned from.
+#and spawns it in the same global position as the block it spawned from.
 func spawn_shield() -> void:
 	shieldPowerUp = shieldPowerUpScene.instantiate()
 	shieldPowerUp.global_position = self.global_position

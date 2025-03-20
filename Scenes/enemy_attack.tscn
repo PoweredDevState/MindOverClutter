@@ -61,7 +61,7 @@ script = ExtResource("1_m1sda")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u7jrp")
+&"": SubResource("AnimationLibrary_u7jrp")
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
