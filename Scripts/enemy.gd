@@ -80,6 +80,10 @@ func _process(_delta: float) -> void:
 				rechargeTimerRef.start()
 			
 
+#This function is called in the ball script 
+#when it collides with the enemy. 
+#This reduces the health variable by 1. 
+#When their health is reduced to 0, destroy the enemy.
 func reduce_health() -> void:
 	currentHealth -= 1
 	change_health_percentage()
@@ -92,7 +96,7 @@ func reduce_health() -> void:
 		SoundManager.create_sound_at_location(global_position, SoundResource.SOUND_TYPE.ENEMY_HIT, false)
 
 #this function creates a health percentage out of 100 for the enemy UI.
-#this also emits a signal to the enemy UI to change its progress bar
+#This also emits a signal to the enemy UI to change its progress bar
 #	based on the percentage
 func change_health_percentage() -> void:
 	healthPercentage = (float(currentHealth) / maxHealth) * 100
@@ -118,14 +122,14 @@ func randomize_attack_position() -> void:
 		+ randf_range(minAttackTransformY, maxAttackTransformY)
 	attackPosition = Vector2(attackTransformX, randomAttackTransformY)
 
-#This function is called when the charge timer is done
+#This receiver function is called when the charge timer is done
 #This function stops the timer 
 #	and changes the current attack state to indicating
 func _on_charge_timer_timeout() -> void:
 	chargeTimerRef.stop()
 	currentAttackState = AttackStates.INDICATING
 
-#This function is called when the indicator timer is done
+#This receiver function is called when the indicator timer is done
 #This function stops the timer 
 #	and changes the current attack state to attack
 func _on_indicator_timer_timeout() -> void:
@@ -145,7 +149,7 @@ func spawn_attack() -> void:
 	
 	currentAttackState = AttackStates.RECHARGE
 
-#This function is called when the recharge timer is done
+#This receiver function is called when the recharge timer is done
 #This function stops the timer 
 #	and calls the reset_attack_states() function
 func _on_recharge_timer_timeout() -> void:
